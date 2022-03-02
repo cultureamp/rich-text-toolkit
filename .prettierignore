@@ -1,0 +1,11 @@
+*.md
+*.snap
+*.tsbuildinfo
+.gitignore
+.npmrc
+.nvmrc
+.prettierignore
+CODEOWNERS
+dist/
+node_modules/
+yarn.lock
