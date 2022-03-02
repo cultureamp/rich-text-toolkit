@@ -1,0 +1,49 @@
+name: checks
+
+on:
+  push:
+    branches-ignore:
+      - master
+
+env:
+  GITHUB_REGISTRY_TOKEN: ${{ secrets.PACKAGE_REGISTRY_ACCESS_TOKEN }}
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version-file: .nvmrc
+      - run: yarn install --frozen-lockfile --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${GITHUB_REGISTRY_TOKEN}
+      - run: yarn build
+
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version-file: .nvmrc
+      - run: yarn install --frozen-lockfile --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${GITHUB_REGISTRY_TOKEN}
+      - run: yarn lint-ci
+
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v2
+        with:
+          cache: yarn
+          node-version-file: .nvmrc
+      - run: yarn install --frozen-lockfile --ignore-scripts
+        env:
+          NODE_AUTH_TOKEN: ${GITHUB_REGISTRY_TOKEN}
+      - run: yarn test --ci
