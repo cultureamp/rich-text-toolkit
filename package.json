@@ -10,6 +10,9 @@
     "access": "restricted",
     "registry": "https://npm.pkg.github.com"
   },
+  "engines": {
+    "node": ">=16"
+  },
   "type": "module",
   "scripts": {},
   "devDependencies": {}
