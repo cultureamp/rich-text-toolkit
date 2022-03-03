@@ -1,10 +1,10 @@
 {
-  "name": "@cultureamp/rich-text-editor",
+  "name": "@cultureamp/rich-text-toolkit",
   "version": "0.0.0",
   "license": "UNLICENSED",
   "repository": {
     "type": "git",
-    "url": "https://github.com/cultureamp/rich-text-editor.git"
+    "url": "https://github.com/cultureamp/rich-text-toolkit.git"
   },
   "publishConfig": {
     "access": "restricted",
