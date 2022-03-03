@@ -4,6 +4,6 @@
     "@changesets/changelog-github",
     { "repo": "cultureamp/rich-text-toolkit" }
   ],
-  "baseBranch": "master",
+  "baseBranch": "main",
   "updateInternalDependencies": "patch"
 }
