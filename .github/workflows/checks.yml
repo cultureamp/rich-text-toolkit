@@ -3,7 +3,7 @@ name: checks
 on:
   push:
     branches-ignore:
-      - master
+      - main
 
 env:
   GITHUB_REGISTRY_TOKEN: ${{ secrets.PACKAGE_REGISTRY_ACCESS_TOKEN }}
