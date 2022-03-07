@@ -5,45 +5,54 @@ on:
     branches-ignore:
       - main
 
-env:
-  GITHUB_REGISTRY_TOKEN: ${{ secrets.PACKAGE_REGISTRY_ACCESS_TOKEN }}
-
 jobs:
   build:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           cache: yarn
           node-version-file: .nvmrc
+          registry-url: "https://npm.pkg.github.com/"
       - run: yarn install --frozen-lockfile --ignore-scripts
         env:
-          NODE_AUTH_TOKEN: ${GITHUB_REGISTRY_TOKEN}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn build
 
   lint:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           cache: yarn
           node-version-file: .nvmrc
+          registry-url: "https://npm.pkg.github.com/"
       - run: yarn install --frozen-lockfile --ignore-scripts
         env:
-          NODE_AUTH_TOKEN: ${GITHUB_REGISTRY_TOKEN}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn lint-ci
 
   test:
     runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      packages: read
     steps:
       - uses: actions/checkout@v2
       - uses: actions/setup-node@v2
         with:
           cache: yarn
           node-version-file: .nvmrc
+          registry-url: "https://npm.pkg.github.com/"
       - run: yarn install --frozen-lockfile --ignore-scripts
         env:
-          NODE_AUTH_TOKEN: ${GITHUB_REGISTRY_TOKEN}
+          NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: yarn test --ci
