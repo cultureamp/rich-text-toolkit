@@ -34,7 +34,7 @@
     "test": "jest"
   },
   "devDependencies": {
-    "@changesets/changelog-github": "^0.4.3",
+    "@cultureamp/changelog-github": "^0.1.0",
     "@changesets/cli": "^2.21.0",
     "@testing-library/react": "^12.1.3",
     "@tsconfig/node16": "^1.0.2",

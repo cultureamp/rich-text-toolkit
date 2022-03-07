@@ -338,15 +338,6 @@
   dependencies:
     "@changesets/types" "^4.1.0"
 
-"@changesets/changelog-github@^0.4.3":
-  version "0.4.3"
-  resolved "https://registry.yarnpkg.com/@changesets/changelog-github/-/changelog-github-0.4.3.tgz#a6f48e75931fbb0625484111d986a15b4e74cb3a"
-  integrity sha512-93X4arork7DV4+tVYeNlOTrw7HOXIvvd41yRPY9atJ+nS32W0uS+ewkZdc6WThuqmwGx9xaU+pxHtVLeYJTF0A==
-  dependencies:
-    "@changesets/get-github-info" "^0.5.0"
-    "@changesets/types" "^4.1.0"
-    dotenv "^8.1.0"
-
 "@changesets/cli@^2.21.0":
   version "2.21.0"
   resolved "https://registry.yarnpkg.com/@changesets/cli/-/cli-2.21.0.tgz#b689f91ed908150efc06e0985e6b4cfbd9aea3a3"
@@ -508,6 +499,15 @@
     fs-extra "^7.0.1"
     human-id "^1.0.2"
     prettier "^1.19.1"
+
+"@cultureamp/changelog-github@^0.1.0":
+  version "0.1.0"
+  resolved "https://npm.pkg.github.com/download/@cultureamp/changelog-github/0.1.0/ff30e81ac20e23ef01988fca4af0202d027a28dcaf3f2966f8d35e8198456359#1243c6a9e702bfa0e9fb28997f94c99af489ae93"
+  integrity sha512-zaTBVXnv1MhyEClIFtG4TOeddBF+ufGnw8JF2ABip0l/IOLjpJs0lcIDix+UwOkClPdVCBzzvxT78M46rpgWxg==
+  dependencies:
+    "@changesets/get-github-info" "^0.5.0"
+    "@changesets/types" "^4.0.1"
+    dotenv "^8.1.0"
 
 "@eslint/eslintrc@^1.2.0":
   version "1.2.0"
