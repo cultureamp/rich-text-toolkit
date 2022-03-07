@@ -20,7 +20,6 @@ jobs:
       - run: yarn install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${GITHUB_REGISTRY_TOKEN}
-      - run: npm i -g npm@6
       - run: echo '//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}' > .npmrc
       - uses: changesets/action@cd8d86bdc84df7dda52db54d26a4d0c9d3c55f76
         with:
