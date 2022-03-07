@@ -17,7 +17,7 @@ jobs:
         with:
           cache: yarn
           node-version-file: .nvmrc
-      - run: yarn install --frozen-lockfile --ignore-scripts
+      - run: yarn install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${GITHUB_REGISTRY_TOKEN}
       - run: yarn build
@@ -30,7 +30,7 @@ jobs:
         with:
           cache: yarn
           node-version-file: .nvmrc
-      - run: yarn install --frozen-lockfile --ignore-scripts
+      - run: yarn install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${GITHUB_REGISTRY_TOKEN}
       - run: yarn lint-ci
@@ -43,7 +43,7 @@ jobs:
         with:
           cache: yarn
           node-version-file: .nvmrc
-      - run: yarn install --frozen-lockfile --ignore-scripts
+      - run: yarn install --frozen-lockfile
         env:
           NODE_AUTH_TOKEN: ${GITHUB_REGISTRY_TOKEN}
       - run: yarn test --ci

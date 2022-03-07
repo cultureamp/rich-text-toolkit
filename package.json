@@ -32,7 +32,7 @@
     "lint:eslint": "eslint . --ext .ts,.tsx",
     "lint:prettier": "prettier '**/*' --loglevel=warn",
     "test": "jest",
-    "version": "changeset version && yarn install --ignore-scripts",
+    "version": "changeset version && yarn install",
     "release": "yarn build && changeset publish"
   },
   "devDependencies": {
