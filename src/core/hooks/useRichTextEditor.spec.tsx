@@ -90,7 +90,8 @@ describe("useRichTextEditor", () => {
       button.click()
     })
 
-    expect(onChange.mock.calls[1][0].toJSON()).toMatchSnapshot()
+    const updatedEditorState = onChange.mock.calls[1][0] as EditorState
+    expect(updatedEditorState.toJSON()).toMatchSnapshot()
   })
 
   it("defaults to editable", async () => {

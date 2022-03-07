@@ -119,7 +119,7 @@ describe("createRichTextEditor", () => {
 
     dispatchTransaction(command)
 
-    const updatedEditorState: EditorState = onChange.mock.calls[0][0]
+    const updatedEditorState = onChange.mock.calls[0][0] as EditorState
 
     expect(updatedEditorState.toJSON()).toMatchSnapshot()
   })
