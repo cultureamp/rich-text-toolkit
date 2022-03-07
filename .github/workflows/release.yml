@@ -23,8 +23,8 @@ jobs:
       - run: echo '//npm.pkg.github.com/:_authToken=${GITHUB_TOKEN}' > .npmrc
       - uses: changesets/action@21240c3cd1d2efa2672d64e0235a03cf139b83e6
         with:
-          version: yarn version
-          publish: yarn release
+          version: yarn changeset version
+          publish: yarn build && yarn changeset publish
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - run: rm .npmrc
