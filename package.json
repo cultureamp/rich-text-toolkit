@@ -31,7 +31,9 @@
     "lint-ci": "yarn lint:prettier --check && yarn lint:eslint --max-warnings=0",
     "lint:eslint": "eslint . --ext .ts,.tsx",
     "lint:prettier": "prettier '**/*' --loglevel=warn",
-    "test": "jest"
+    "test": "jest",
+    "ci:version": "changeset version",
+    "ci:release": "yarn build && changeset publish"
   },
   "devDependencies": {
     "@cultureamp/changelog-github": "^0.1.0",

@@ -20,8 +20,8 @@ jobs:
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - uses: changesets/action@cd8d86bdc84df7dda52db54d26a4d0c9d3c55f76
         with:
-          version: yarn changeset version
-          publish: yarn build && yarn changeset publish
+          version: yarn ci:version
+          publish: yarn ci:release
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NODE_AUTH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
