@@ -1,7 +1,9 @@
-import { Mark, MarkType, ResolvedPos } from "prosemirror-model"
 import { MarkRange } from "../core/types.js"
+import { MarkType, ResolvedPos } from "prosemirror-model"
 
-// TODO this doesn't handle selections _across_ nodes
+// Note: this doesn't handle selections _across_ nodes.
+// At the time of writing the implication of this is on links: they cannot span across multiple nodes.
+// There's no impact on the other marks like bold, italics and underline.
 export function getMarkRange(
   $pos: ResolvedPos | null = null,
   type: MarkType | null = null
