@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.2.0
+
+### Minor Changes
+
+- [#12](https://github.com/cultureamp/rich-text-toolkit/pull/12) [`7e1e840`](https://github.com/cultureamp/rich-text-toolkit/commit/7e1e840569c2a45bb0c29fd4d1ee072db882d69d) - Creates commands folder with helper functions
+
 ## 1.1.0
 
 ### Minor Changes
