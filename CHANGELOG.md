@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.2.1
+
+### Patch Changes
+
+- [#14](https://github.com/cultureamp/rich-text-toolkit/pull/14) [`b86a20f`](https://github.com/cultureamp/rich-text-toolkit/commit/b86a20f9d5eb7ad0f2a30a3c8eaa3caed2c85ed0) - Exports the commands functions that were just added
+
 ## 1.2.0
 
 ### Minor Changes
