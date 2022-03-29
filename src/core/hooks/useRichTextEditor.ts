@@ -26,7 +26,8 @@ type UseRichTextEditorReturnValue = [
  */
 export function useRichTextEditor(
   initialEditorState: EditorState,
-  options?: Options
+  attributes?: { [name: string]: string },
+  options?: Options,
 ): UseRichTextEditorReturnValue {
   options = {
     editable: true,
@@ -71,6 +72,7 @@ export function useRichTextEditor(
           initialEditorState: editorState,
           onChange: setEditorState,
           isEditable: () => editableStatusRef.current,
+          attributes
         })
         destroyEditorRef.current = instance.destroy
         dispatchTransactionRef.current = instance.dispatchTransaction

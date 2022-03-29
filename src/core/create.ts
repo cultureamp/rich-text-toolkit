@@ -11,6 +11,7 @@ type EditorArgs = {
   initialEditorState: EditorState
   node: HTMLElement
   onChange: (editorState: EditorState) => void
+  attributes: { [name: string]: string }
   isEditable?: () => boolean
 }
 
@@ -22,6 +23,7 @@ export function createRichTextEditor({
   initialEditorState,
   node,
   onChange = () => undefined,
+  attributes,
   isEditable = () => true,
 }: EditorArgs): EditorAPI {
   let editorView: EditorView | undefined
@@ -50,6 +52,7 @@ export function createRichTextEditor({
   editorView = new ProseMirrorEditorView(node, {
     state: initialEditorState,
     dispatchTransaction: dispatchCommandOrTransaction,
+    attributes,
     editable: isEditable,
   })
 
