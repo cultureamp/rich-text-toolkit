@@ -26,7 +26,7 @@ type UseRichTextEditorReturnValue = [
  */
 export function useRichTextEditor(
   initialEditorState: EditorState,
-  attributes?: { [name: string]: string },
+  attributes: { [name: string]: string },
   options?: Options,
 ): UseRichTextEditorReturnValue {
   options = {

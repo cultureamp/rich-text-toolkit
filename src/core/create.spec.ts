@@ -5,6 +5,8 @@ import { findByText, queryByText } from "@testing-library/dom"
 import { testEditorState } from "./fixtures/testState.js"
 
 describe("createRichTextEditor", () => {
+  const attributes = {"aria-labelledby": "label-text-123"}
+
   it("initializes an editor with the correct content", async () => {
     const node = document.createElement("div")
     const onChange = jest.fn()
@@ -12,6 +14,7 @@ describe("createRichTextEditor", () => {
     createRichTextEditor({
       node,
       onChange,
+      attributes,
       initialEditorState: testEditorState,
     })
 
@@ -25,6 +28,7 @@ describe("createRichTextEditor", () => {
     const returnValue = createRichTextEditor({
       node,
       onChange,
+      attributes,
       initialEditorState: testEditorState,
     })
 
@@ -40,6 +44,7 @@ describe("createRichTextEditor", () => {
     const { destroy } = createRichTextEditor({
       node,
       onChange,
+      attributes,
       initialEditorState: testEditorState,
     })
 
@@ -53,6 +58,7 @@ describe("createRichTextEditor", () => {
   it("updates the DOM when commands are dispatched", async () => {
     const node = document.createElement("div")
     const onChange = jest.fn()
+
     const command = (
       state: EditorState,
       dispatch: (tx: Transaction) => void
@@ -66,6 +72,7 @@ describe("createRichTextEditor", () => {
     const { dispatchTransaction } = createRichTextEditor({
       node,
       onChange,
+      attributes,
       initialEditorState: testEditorState,
     })
 
@@ -90,6 +97,7 @@ describe("createRichTextEditor", () => {
     const { dispatchTransaction } = createRichTextEditor({
       node,
       onChange,
+      attributes,
       initialEditorState: testEditorState,
     })
 
@@ -114,6 +122,7 @@ describe("createRichTextEditor", () => {
     const { dispatchTransaction } = createRichTextEditor({
       node,
       onChange,
+      attributes,
       initialEditorState: testEditorState,
     })
 
@@ -131,6 +140,7 @@ describe("createRichTextEditor", () => {
     createRichTextEditor({
       node,
       onChange,
+      attributes,
       initialEditorState: testEditorState,
     })
 
@@ -144,6 +154,7 @@ describe("createRichTextEditor", () => {
     createRichTextEditor({
       node,
       onChange,
+      attributes,
       initialEditorState: testEditorState,
       isEditable: () => false,
     })
@@ -166,6 +177,7 @@ describe("createRichTextEditor", () => {
     const { dispatchTransaction } = createRichTextEditor({
       node,
       onChange,
+      attributes,
       initialEditorState: testEditorState,
       isEditable: () => editable,
     })
@@ -176,5 +188,30 @@ describe("createRichTextEditor", () => {
     dispatchTransaction(noopCommand)
 
     expect(node.children[0]?.getAttribute("contenteditable")).toBe("false")
+  })
+
+  it("aria-labelledby is present", async () => {
+    let editable = true
+    const node = document.createElement("div")
+    const onChange = jest.fn()
+    const noopCommand = (
+      state: EditorState,
+      dispatch: (tx: Transaction) => void
+    ) => {
+      dispatch(state.tr)
+      return true
+    }
+
+    const { dispatchTransaction } = createRichTextEditor({
+      node,
+      onChange,
+      attributes,
+      initialEditorState: testEditorState,
+      isEditable: () => editable,
+    })
+
+    dispatchTransaction(noopCommand)
+
+    expect(node.children[0]?.getAttribute("aria-labelledby")).toBe("label-text-123")
   })
 })
