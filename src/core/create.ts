@@ -11,7 +11,10 @@ type EditorArgs = {
   initialEditorState: EditorState
   node: HTMLElement
   onChange: (editorState: EditorState) => void
-  attributes: { [name: string]: string }
+  /*
+   * Pass in HTML attributes into the parent RTE node
+   */
+  attributes: { "aria-labelledby": string; [name: string]: string }
   isEditable?: () => boolean
 }
 

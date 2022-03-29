@@ -24,7 +24,7 @@ function Scenario({
   const [ref, editorState, dispatchTransaction, setEditableStatus] =
     useRichTextEditor(
       testEditorState,
-      { "aria-labelledby": "document-label-id" },
+      { "aria-labelledby": "label-ref-id", "data-test-id": "12345678" },
       { editable }
     )
 

@@ -26,7 +26,10 @@ type UseRichTextEditorReturnValue = [
  */
 export function useRichTextEditor(
   initialEditorState: EditorState,
-  attributes: { [name: string]: string },
+  /*
+   * Pass in HTML attributes into the parent RTE node
+   */
+  attributes: { "aria-labelledby": string; [name: string]: string },
   options?: Options
 ): UseRichTextEditorReturnValue {
   options = {
