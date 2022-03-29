@@ -5,7 +5,7 @@ import { findByText, queryByText } from "@testing-library/dom"
 import { testEditorState } from "./fixtures/testState.js"
 
 describe("createRichTextEditor", () => {
-  const attributes = {"aria-labelledby": "label-text-123"}
+  const attributes = { "aria-labelledby": "label-text-123" }
 
   it("initializes an editor with the correct content", async () => {
     const node = document.createElement("div")
@@ -212,6 +212,8 @@ describe("createRichTextEditor", () => {
 
     dispatchTransaction(noopCommand)
 
-    expect(node.children[0]?.getAttribute("aria-labelledby")).toBe("label-text-123")
+    expect(node.children[0]?.getAttribute("aria-labelledby")).toBe(
+      "label-text-123"
+    )
   })
 })
