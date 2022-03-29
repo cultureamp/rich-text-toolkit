@@ -22,7 +22,11 @@ function Scenario({
   }
 
   const [ref, editorState, dispatchTransaction, setEditableStatus] =
-    useRichTextEditor(testEditorState, { editable })
+    useRichTextEditor(
+      testEditorState,
+      { "aria-labelledby": "label-ref-id", "data-test-id": "12345678" },
+      { editable }
+    )
 
   useEffect(() => {
     // Propagate changes to the editorState

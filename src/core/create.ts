@@ -11,6 +11,10 @@ type EditorArgs = {
   initialEditorState: EditorState
   node: HTMLElement
   onChange: (editorState: EditorState) => void
+  /*
+   * Pass in HTML attributes into the parent RTE node
+   */
+  attributes: { "aria-labelledby": string; [name: string]: string }
   isEditable?: () => boolean
 }
 
@@ -22,6 +26,7 @@ export function createRichTextEditor({
   initialEditorState,
   node,
   onChange = () => undefined,
+  attributes,
   isEditable = () => true,
 }: EditorArgs): EditorAPI {
   let editorView: EditorView | undefined
@@ -50,6 +55,7 @@ export function createRichTextEditor({
   editorView = new ProseMirrorEditorView(node, {
     state: initialEditorState,
     dispatchTransaction: dispatchCommandOrTransaction,
+    attributes,
     editable: isEditable,
   })
 

@@ -26,6 +26,10 @@ type UseRichTextEditorReturnValue = [
  */
 export function useRichTextEditor(
   initialEditorState: EditorState,
+  /*
+   * Pass in HTML attributes into the parent RTE node
+   */
+  attributes: { "aria-labelledby": string; [name: string]: string },
   options?: Options
 ): UseRichTextEditorReturnValue {
   options = {
@@ -71,6 +75,7 @@ export function useRichTextEditor(
           initialEditorState: editorState,
           onChange: setEditorState,
           isEditable: () => editableStatusRef.current,
+          attributes,
         })
         destroyEditorRef.current = instance.destroy
         dispatchTransactionRef.current = instance.dispatchTransaction
