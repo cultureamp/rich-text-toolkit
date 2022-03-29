@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.3.0
+
+### Minor Changes
+
+- [#16](https://github.com/cultureamp/rich-text-toolkit/pull/16) [`a6d925a`](https://github.com/cultureamp/rich-text-toolkit/commit/a6d925af8a1776bf0f544d2e6dc3bc348b753e06) - Add attributes prop to use and create RTE function to allow HTML attributes such as "aria-labelledby" to be passed into the editor
+
 ## 1.2.1
 
 ### Patch Changes
