@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.4.0
+
+### Minor Changes
+
+- [#20](https://github.com/cultureamp/rich-text-toolkit/pull/20) [`6bb75c7`](https://github.com/cultureamp/rich-text-toolkit/commit/6bb75c725b77a8ed31012ed03d118de7f06b6005) - Expand supported node versions to v14 and above
+
 ## 1.3.0
 
 ### Minor Changes
