@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.5.0
+
+### Minor Changes
+
+- [#22](https://github.com/cultureamp/rich-text-toolkit/pull/22) [`6f59f14`](https://github.com/cultureamp/rich-text-toolkit/commit/6f59f14fce3020be0fbb0e5a1c29456117bc3c7b) - Adds inputrules for lists, removes buildKeymap function
+
 ## 1.4.0
 
 ### Minor Changes
