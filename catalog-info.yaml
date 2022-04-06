@@ -1,0 +1,17 @@
+apiVersion: backstage.io/v1alpha1
+kind: Component
+metadata:
+  name: rich-text-toolkit
+  description: >
+    A collection of helpers for building a rich text editor (WYSIWYG) with ProseMirror.
+  tags:
+    - users-internal
+    - camp-foundations
+    - data-none
+  annotations:
+    github.com/project-slug: cultureamp/rich-text-toolkit
+    github.com/team-slug: cultureamp/kaizen-design-system
+spec:
+  type: library
+  lifecycle: production
+  owner: kaizen-design-system
