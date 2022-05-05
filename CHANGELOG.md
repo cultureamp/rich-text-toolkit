@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.6.0
+
+### Minor Changes
+
+- [#25](https://github.com/cultureamp/rich-text-toolkit/pull/25) [`a3bec79`](https://github.com/cultureamp/rich-text-toolkit/commit/a3bec79a2288761e82494d0e9ec12c8aaf850f7e) - Added list nodes
+
 ## 1.5.0
 
 ### Minor Changes
