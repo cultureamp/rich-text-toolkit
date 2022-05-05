@@ -4,7 +4,18 @@ import { nodes as proseNodes } from "prosemirror-schema-basic"
 
 export const nodes: NodeSpec = {
   ...proseNodes,
-  ordered_list: orderedList,
-  bullet_list: bulletList,
-  list_item: listItem,
+  ordered_list: {
+    ...orderedList,
+    content: "list_item+",
+    group: "block",
+  },
+  bullet_list: {
+    ...bulletList,
+    content: "list_item+",
+    group: "block",
+  },
+  list_item: {
+    ...listItem,
+    content: "paragraph block*",
+  },
 }
