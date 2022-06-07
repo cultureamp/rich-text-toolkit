@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.6.1
+
+### Patch Changes
+
+- [#27](https://github.com/cultureamp/rich-text-toolkit/pull/27) [`59326a5`](https://github.com/cultureamp/rich-text-toolkit/commit/59326a548a98b1d2f9eb9087e16f7abdf5acf279) - Changes node names from snake case to camel case
+
 ## 1.6.0
 
 ### Minor Changes
