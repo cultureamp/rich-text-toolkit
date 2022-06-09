@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.7.0
+
+### Minor Changes
+
+- [#29](https://github.com/cultureamp/rich-text-toolkit/pull/29) [`e26a1af`](https://github.com/cultureamp/rich-text-toolkit/commit/e26a1af04c25811e3c46ce1d8918259bbc03bb1d) - Add link mark
+
 ## 1.6.1
 
 ### Patch Changes
