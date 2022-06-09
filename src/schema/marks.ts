@@ -1,4 +1,4 @@
-import { MarkSpec } from "prosemirror-model"
+import { MarkSpec, Node } from "prosemirror-model"
 import { marks as proseMarks } from "prosemirror-schema-basic"
 
 export const marks: MarkSpec = {
@@ -12,4 +12,41 @@ export const marks: MarkSpec = {
       return ["u", 0]
     },
   },
+
+  // A link. Rendered and parsed as an `<a>` element.
+  link: {
+    attrs: {
+      href: { default: null },
+      _metadata: { default: { added: true } },
+      target: { default: "_blank" },
+      rel: { default: "noreferrer" },
+    },
+    inclusive: false,
+    parseDOM: [
+      {
+        tag: "a[href]",
+        getAttrs(dom: HTMLAnchorElement) {
+          return {
+            href: getAttributeWithDefault(dom, "href"),
+            target: getAttributeWithDefault(dom, "target"),
+            rel: getAttributeWithDefault(dom, "rel"),
+            _metadata: null,
+          }
+        },
+      },
+    ],
+    toDOM(node: Node) {
+      const { href, target, rel } = node.attrs
+      return ["a", { href, target, rel }, 0]
+    },
+  },
+}
+
+function getAttributeWithDefault(
+  node: HTMLElement,
+  attributeName: string,
+  defaultValue: unknown = null
+) {
+  const value = node.getAttribute(attributeName)
+  return value && value !== "" ? value : defaultValue
 }
