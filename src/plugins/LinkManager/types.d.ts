@@ -1,17 +1,5 @@
-import { EditorState, Transaction } from "prosemirror-state"
+import { Transaction, Command } from "prosemirror-state"
 import { EditorView } from "prosemirror-view"
-
-/*
- * Dispatch receives a transaction from ProseMirror to effect changes to the
- * EditorState in order
- */
-export type Dispatch = (tx: Transaction) => void
-
-export type Command = (
-  editorState: EditorState,
-  dispatch: Dispatch,
-  view?: EditorView
-) => boolean
 
 export type MaybeCommand = Command | Transaction
 
