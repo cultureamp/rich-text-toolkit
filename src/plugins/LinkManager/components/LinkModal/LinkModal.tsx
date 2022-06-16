@@ -16,7 +16,7 @@ export const LinkModal: React.VFC<LinkModalProps> = props => {
   const [validationError, setValidationError] = useState<boolean>(false)
   const inputRef = useRef<HTMLInputElement>(null)
 
-  const handleSubmit = () => {
+  const handleSubmit = (): void => {
     if (href.trim().length < 1) {
       inputRef.current?.focus()
       setValidationError(true)
@@ -44,7 +44,7 @@ export const LinkModal: React.VFC<LinkModalProps> = props => {
         inputRef={inputRef}
         validationMessage={validationError ? "Please enter a URL" : undefined}
         status={validationError ? "error" : undefined}
-        onChange={e => {
+        onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           setHref(e.target.value)
         }}
         inline
