@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.8.0
+
+### Minor Changes
+
+- [#31](https://github.com/cultureamp/rich-text-toolkit/pull/31) [`4886d46`](https://github.com/cultureamp/rich-text-toolkit/commit/4886d46f7387badc9d153686d88080244e57f6cc) - Adds LinkManager plugin
+
 ## 1.7.0
 
 ### Minor Changes
