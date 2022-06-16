@@ -11,13 +11,14 @@ import {
 import { CAEditorView, Dispatcher } from "./types.d.js"
 import { ComponentType } from "react"
 import { EditorState, Plugin } from "prosemirror-state"
-import { LinkEditor, LinkEditorProps } from "./components/LinkEditor/index.js"
+import {
+  LinkEditor,
+  LinkEditorAttrs,
+  LinkEditorProps,
+} from "./components/LinkEditor/index.js"
 import { MarkType } from "prosemirror-model"
 import { SelectionPosition } from "./types.d.js"
-import {
-  TooltipComponentType,
-  createReactTooltipWrapper,
-} from "./createReactTooltipWrapper.js"
+import { createReactTooltipWrapper } from "./createReactTooltipWrapper.js"
 import debounce from "lodash.debounce"
 
 class LinkManager {
@@ -27,7 +28,7 @@ class LinkManager {
   markType: MarkType
   tooltipTarget: {
     destroy: () => void
-    update: (props: TooltipComponentType) => void
+    update: (props: LinkEditorProps) => void
   } | null
   onResize: () => void
 
@@ -106,7 +107,7 @@ class LinkManager {
     this.tooltipTarget = null
   }
 
-  getEditorProps(view: CAEditorView) {
+  getEditorProps(view: CAEditorView): LinkEditorProps {
     let selectionPosition: SelectionPosition | null = null
     const { selection } = view.state
     const contained = markContainsSelection(view.state, this.markType)
@@ -140,7 +141,7 @@ class LinkManager {
       updateAttrs: (attrs: { [key: string]: unknown }) => {
         view.dispatch(updateMark(this.markType, attrs, { toExtent: true }))
       },
-      attrs: getMarkAttrs(view.state, this.markType),
+      attrs: getMarkAttrs(view.state, this.markType) as LinkEditorAttrs,
       selectionPosition,
       focusEditor: () => {
         view.focus()

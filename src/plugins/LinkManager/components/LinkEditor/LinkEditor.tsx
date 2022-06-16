@@ -3,18 +3,15 @@ import { LinkPopover } from "../LinkPopover/index.js"
 import { SelectionPosition } from "../../types.d.js"
 import React, { ReactElement, useState } from "react"
 
+export type LinkEditorAttrs = {
+  href: string | null
+  _metadata: { [key: string]: unknown } | null
+}
+
 export type LinkEditorProps = {
   removeMark: () => void
-  updateAttrs: ({
-    href,
-  }: {
-    href: string | null
-    _metadata: { [key: string]: unknown } | null
-  }) => void
-  attrs: {
-    href: string | null
-    _metadata: { [key: string]: unknown } | null
-  }
+  updateAttrs: ({ href }: LinkEditorAttrs) => void
+  attrs: LinkEditorAttrs
   selectionPosition: SelectionPosition
   focusEditor: () => void
 }

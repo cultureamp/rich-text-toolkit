@@ -1,8 +1,7 @@
+import { LinkEditorProps } from "./components/index.js"
 import Nanobus from "nanobus"
 import React, { ElementType, useEffect, useState } from "react"
 import ReactDOM from "react-dom"
-
-export type TooltipComponentType = string | unknown
 
 function Wrapper({
   emitter,
@@ -10,14 +9,14 @@ function Wrapper({
   Component,
 }: {
   emitter: Nanobus
-  componentProps: TooltipComponentType
+  componentProps: LinkEditorProps
   Component: ElementType
 }) {
   const [localComponentProps, setLocalComponentProps] =
-    useState<TooltipComponentType>(componentProps)
+    useState<LinkEditorProps>(componentProps)
 
   useEffect(() => {
-    function onUpdate(newComponentProps: TooltipComponentType) {
+    function onUpdate(newComponentProps: LinkEditorProps) {
       setLocalComponentProps(newComponentProps)
     }
     emitter.addListener("update", onUpdate)
@@ -37,7 +36,7 @@ function Wrapper({
 export function createReactTooltipWrapper(
   parentNode: HTMLElement,
   Component: ElementType,
-  componentProps: TooltipComponentType
+  componentProps: LinkEditorProps
 ) {
   const emitter = new Nanobus()
   const node = document.createElement("div")
@@ -58,7 +57,7 @@ export function createReactTooltipWrapper(
     node.remove()
   }
 
-  function update(props: TooltipComponentType) {
+  function update(props: LinkEditorProps) {
     emitter.emit("update", props)
   }
 
