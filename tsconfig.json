@@ -12,6 +12,7 @@
     "sourceMap": true,
     "types": []
   },
+  "files": ["./types.d.ts"],
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }
