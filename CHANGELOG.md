@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.8.1
+
+### Patch Changes
+
+- [#33](https://github.com/cultureamp/rich-text-toolkit/pull/33) [`4c2e6eb`](https://github.com/cultureamp/rich-text-toolkit/commit/4c2e6ebe50a1a37bfda1f163aa3d1c54e3b40961) - Copy scss files after build
+
 ## 1.8.0
 
 ### Minor Changes
