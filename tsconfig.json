@@ -10,7 +10,8 @@
     "outDir": "dist",
     "rootDir": "src",
     "sourceMap": true,
-    "types": []
+    "types": [],
+    "allowSyntheticDefaultImports": true
   },
   "files": ["./types.d.ts"],
   "include": ["src/**/*"],
