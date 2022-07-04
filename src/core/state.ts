@@ -1,4 +1,4 @@
-import { Doc, DocContent } from "./types.js"
+import { Doc, DocContent } from "./types"
 import { EditorState, Plugin } from "prosemirror-state"
 import { Node, Schema } from "prosemirror-model"
 

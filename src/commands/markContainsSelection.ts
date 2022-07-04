@@ -1,7 +1,7 @@
 import { EditorState } from "prosemirror-state"
 import { MarkType } from "prosemirror-model"
-import { getMarkRange } from "./getMarkRange.js"
-import { markIsActive } from "./markIsActive.js"
+import { getMarkRange } from "./getMarkRange"
+import { markIsActive } from "./markIsActive"
 
 export function markContainsSelection(
   state: EditorState,

@@ -1,8 +1,8 @@
 import { EditorState, Transaction } from "prosemirror-state"
 import { act, configure, render, screen } from "@testing-library/react"
 import { describe, expect, it, jest } from "@jest/globals"
-import { testEditorState } from "../fixtures/testState.js"
-import { useRichTextEditor } from "./useRichTextEditor.js"
+import { testEditorState } from "../fixtures/testState"
+import { useRichTextEditor } from "./useRichTextEditor"
 import React, { useEffect } from "react"
 
 configure({ testIdAttribute: "data-automation-id" })
