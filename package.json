@@ -14,7 +14,8 @@
     "node": ">=14"
   },
   "type": "module",
-  "main": "./dist/index.js",
+  "module": "./dist/mjs/index.js",
+  "main": "./dist/cjs/index.js",
   "files": [
     "dist/",
     "src/",
@@ -25,8 +26,8 @@
     "semi": false
   },
   "scripts": {
-    "build": "tsc --build && yarn copy-files",
-    "clean": "tsc --build --clean",
+    "build": "tsc --outDir dist/cjs --module CommonJS && tsc --outDir dist/mjs && yarn copy-files",
+    "clean": "rm -rf dist",
     "copy-files": "copyfiles -u 1 src/**/*.scss dist/",
     "lint": "yarn lint:prettier --write && yarn lint:eslint --fix",
     "lint-ci": "yarn lint:prettier --check && yarn lint:eslint --max-warnings=0",
