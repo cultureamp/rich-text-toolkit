@@ -1,5 +1,6 @@
 import { MarkSpec, Node } from "prosemirror-model"
 import { marks as proseMarks } from "prosemirror-schema-basic"
+import { isValidHref } from "../"
 
 export const marks: MarkSpec = {
   ...proseMarks,
@@ -37,6 +38,11 @@ export const marks: MarkSpec = {
     ],
     toDOM(node: Node) {
       const { href, target, rel } = node.attrs
+
+      if (!isValidHref(href)) {
+        return node
+      }
+
       return ["a", { href, target, rel }, 0]
     },
   },
