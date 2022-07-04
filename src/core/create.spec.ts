@@ -1,8 +1,8 @@
 import { EditorState, Transaction } from "prosemirror-state"
-import { createRichTextEditor } from "./create.js"
+import { createRichTextEditor } from "./create"
 import { describe, expect, it, jest } from "@jest/globals"
 import { findByText, queryByText } from "@testing-library/dom"
-import { testEditorState } from "./fixtures/testState.js"
+import { testEditorState } from "./fixtures/testState"
 
 describe("createRichTextEditor", () => {
   const attributes = { "aria-labelledby": "label-text-123" }

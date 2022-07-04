@@ -1,6 +1,6 @@
-import { CommandOrTransaction } from "../types.js"
+import { CommandOrTransaction } from "../types"
 import { EditorState } from "prosemirror-state"
-import { createRichTextEditor } from "../create.js"
+import { createRichTextEditor } from "../create"
 import { useCallback, useEffect, useRef, useState } from "react"
 
 type Options = {

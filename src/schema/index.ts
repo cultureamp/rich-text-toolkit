@@ -1,2 +1,2 @@
-export * from "./marks.js"
-export * from "./nodes.js"
+export * from "./marks"
+export * from "./nodes"

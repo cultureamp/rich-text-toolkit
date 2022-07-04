@@ -7,18 +7,18 @@ import {
   removeMark,
   updateMark,
   validateAndRemoveMarks,
-} from "../../index.js"
-import { CAEditorView, Dispatcher } from "./types.d.js"
+} from "../../index"
+import { CAEditorView, Dispatcher } from "./types.d"
 import { ComponentType } from "react"
 import { EditorState, Plugin } from "prosemirror-state"
 import {
   LinkEditor,
   LinkEditorAttrs,
   LinkEditorProps,
-} from "./components/LinkEditor/index.js"
+} from "./components/LinkEditor/index"
 import { MarkType } from "prosemirror-model"
-import { SelectionPosition } from "./types.d.js"
-import { createReactTooltipWrapper } from "./createReactTooltipWrapper.js"
+import { SelectionPosition } from "./types.d"
+import { createReactTooltipWrapper } from "./createReactTooltipWrapper"
 import debounce from "lodash.debounce"
 
 class LinkManager {

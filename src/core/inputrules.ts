@@ -3,7 +3,7 @@ import { wrappingInputRule } from "prosemirror-inputrules"
 
 // Given a list node type, returns an input rule that turns a number
 // followed by a dot at the start of a textblock into an ordered list.
-// Copied from https://github.com/ProseMirror/prosemirror-example-setup/blob/master/src/inputrules.js
+// Copied from https://github.com/ProseMirror/prosemirror-example-setup/blob/master/src/inputrules
 export function orderedListRule(nodeType: NodeType) {
   return wrappingInputRule(
     /^(\d+)\.\s$/,
@@ -16,7 +16,7 @@ export function orderedListRule(nodeType: NodeType) {
 // Given a list node type, returns an input rule that turns a bullet
 // (dash, plush, or asterisk) at the start of a textblock into a
 // bullet list.
-// Copied from https://github.com/ProseMirror/prosemirror-example-setup/blob/master/src/inputrules.js
+// Copied from https://github.com/ProseMirror/prosemirror-example-setup/blob/master/src/inputrules
 export function bulletListRule(nodeType: NodeType) {
   return wrappingInputRule(/^\s*([-+*])\s$/, nodeType)
 }

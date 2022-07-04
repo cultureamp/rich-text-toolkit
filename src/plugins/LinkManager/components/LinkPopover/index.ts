@@ -1,1 +1,1 @@
-export * from "./LinkPopover.js"
+export * from "./LinkPopover"

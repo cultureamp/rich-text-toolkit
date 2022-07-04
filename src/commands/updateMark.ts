@@ -1,7 +1,7 @@
-import { CommandFactory } from "../core/types.js"
+import { CommandFactory } from "../core/types"
 import { EditorState, Transaction } from "prosemirror-state"
 import { MarkType } from "prosemirror-model"
-import { getMarkRange } from "./getMarkRange.js"
+import { getMarkRange } from "./getMarkRange"
 
 export const updateMark: CommandFactory =
   (

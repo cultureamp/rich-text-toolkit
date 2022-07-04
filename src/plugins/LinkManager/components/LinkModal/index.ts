@@ -1,1 +1,1 @@
-export * from "./LinkModal.js"
+export * from "./LinkModal"

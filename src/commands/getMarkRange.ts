@@ -1,4 +1,4 @@
-import { MarkRange } from "../core/types.js"
+import { MarkRange } from "../core/types"
 import { MarkType, ResolvedPos } from "prosemirror-model"
 
 // Note: this doesn't handle selections _across_ nodes.
