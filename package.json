@@ -28,7 +28,7 @@
   "scripts": {
     "build": "tsc --outDir dist/cjs --module CommonJS && tsc --outDir dist/mjs --module es2020 && yarn copy-files",
     "clean": "rm -rf dist",
-    "copy-files": "copyfiles -u 1 src/**/*.scss dist/",
+    "copy-files": "copyfiles -u 1 src/**/*.scss dist/cjs && copyfiles -u 1 src/**/*.scss dist/mjs",
     "lint": "yarn lint:prettier --write && yarn lint:eslint --fix",
     "lint-ci": "yarn lint:prettier --check && yarn lint:eslint --max-warnings=0",
     "lint:eslint": "eslint . --ext .ts,.tsx",
