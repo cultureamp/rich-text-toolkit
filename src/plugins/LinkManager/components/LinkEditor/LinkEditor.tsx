@@ -1,6 +1,6 @@
-import { LinkModal } from "../LinkModal/index.js"
-import { LinkPopover } from "../LinkPopover/index.js"
-import { SelectionPosition } from "../../types.d.js"
+import { LinkModal } from "../LinkModal"
+import { LinkPopover } from "../LinkPopover"
+import { SelectionPosition } from "../../types.d"
 import React, { ReactElement, useState } from "react"
 
 export type LinkEditorAttrs = {

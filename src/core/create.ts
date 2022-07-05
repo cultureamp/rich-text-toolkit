@@ -1,4 +1,4 @@
-import { CommandOrTransaction, EditorView } from "./types.js"
+import { CommandOrTransaction, EditorView } from "./types"
 import { EditorState, Transaction } from "prosemirror-state"
 import { EditorView as ProseMirrorEditorView } from "prosemirror-view"
 

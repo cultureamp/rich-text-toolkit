@@ -1,1 +1,1 @@
-export * from "./LinkEditor.js"
+export * from "./LinkEditor"

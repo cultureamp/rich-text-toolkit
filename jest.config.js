@@ -1,7 +1,7 @@
 /**
  * @type {import("@jest/types").Config.InitialOptions}
  */
-export const config = {
+module.exports = {
   preset: "ts-jest/presets/default-esm",
   resolver: "jest-ts-webcompat-resolver",
   testEnvironment: "jsdom",
@@ -10,9 +10,6 @@ export const config = {
   globals: {
     "ts-jest": {
       isolatedModules: true,
-      useESM: true,
     },
   },
 }
-
-export default config

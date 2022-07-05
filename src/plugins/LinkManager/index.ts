@@ -1,2 +1,2 @@
-export * from "./LinkManager.js"
-export * from "./components/index.js"
+export * from "./LinkManager"
+export * from "./components"

@@ -1,1 +1,1 @@
-export * from "./LinkManager/index.js"
+export * from "./LinkManager"

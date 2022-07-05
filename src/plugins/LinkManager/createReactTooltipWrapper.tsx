@@ -1,4 +1,4 @@
-import { LinkEditorProps } from "./components/index.js"
+import { LinkEditorProps } from "./components"
 import Nanobus from "nanobus"
 import React, { ElementType, useEffect, useState } from "react"
 import ReactDOM from "react-dom"

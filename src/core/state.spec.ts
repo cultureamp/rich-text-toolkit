@@ -4,14 +4,14 @@ import {
   createDocNode,
   createDocNodeFromContent,
   createEditorState,
-} from "./state.js"
+} from "./state"
 import { describe, expect, it } from "@jest/globals"
 import {
   testDocNode,
   testDocNodeContentJSON,
   testDocNodeJSON,
   testSchema,
-} from "./fixtures/testState.js"
+} from "./fixtures/testState"
 
 describe("createDoc", () => {
   it("creates a Node from a document definition", () => {

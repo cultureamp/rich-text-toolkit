@@ -1,4 +1,4 @@
-import { SelectionPosition } from "../../types.d.js"
+import { SelectionPosition } from "../../types.d"
 import { createPortal } from "react-dom"
 import React, { forwardRef, useEffect, useRef, useState } from "react"
 import debounce from "lodash.debounce"
