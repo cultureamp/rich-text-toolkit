@@ -1,1 +1,1 @@
-export * from "./LinkManager/index"
+export * from "./LinkManager"

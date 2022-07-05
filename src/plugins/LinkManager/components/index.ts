@@ -1,3 +1,3 @@
-export * from "./LinkEditor/index"
-export * from "./LinkModal/index"
-export * from "./LinkPopover/index"
+export * from "./LinkEditor"
+export * from "./LinkModal"
+export * from "./LinkPopover"

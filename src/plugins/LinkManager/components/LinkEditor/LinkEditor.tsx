@@ -1,5 +1,5 @@
-import { LinkModal } from "../LinkModal/index"
-import { LinkPopover } from "../LinkPopover/index"
+import { LinkModal } from "../LinkModal"
+import { LinkPopover } from "../LinkPopover"
 import { SelectionPosition } from "../../types.d"
 import React, { ReactElement, useState } from "react"
 

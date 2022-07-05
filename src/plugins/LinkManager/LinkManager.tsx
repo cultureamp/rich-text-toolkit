@@ -7,7 +7,7 @@ import {
   removeMark,
   updateMark,
   validateAndRemoveMarks,
-} from "../../index"
+} from "../../"
 import { CAEditorView, Dispatcher } from "./types.d"
 import { ComponentType } from "react"
 import { EditorState, Plugin } from "prosemirror-state"
@@ -15,7 +15,7 @@ import {
   LinkEditor,
   LinkEditorAttrs,
   LinkEditorProps,
-} from "./components/LinkEditor/index"
+} from "./components/LinkEditor"
 import { MarkType } from "prosemirror-model"
 import { SelectionPosition } from "./types.d"
 import { createReactTooltipWrapper } from "./createReactTooltipWrapper"

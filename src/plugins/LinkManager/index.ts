@@ -1,2 +1,2 @@
 export * from "./LinkManager"
-export * from "./components/index"
+export * from "./components"
