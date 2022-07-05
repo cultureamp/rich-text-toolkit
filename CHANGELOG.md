@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.8.2
+
+### Patch Changes
+
+- [#37](https://github.com/cultureamp/rich-text-toolkit/pull/37) [`c2b12c6`](https://github.com/cultureamp/rich-text-toolkit/commit/c2b12c6d1bfcd452d65d56b34966b08427da0e11) - Remove ESM
+
 ## 1.8.1
 
 ### Patch Changes
