@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.8.3
+
+### Patch Changes
+
+- [#39](https://github.com/cultureamp/rich-text-toolkit/pull/39) [`1476692`](https://github.com/cultureamp/rich-text-toolkit/commit/14766924085504a9068685071bd9eb0f10d55bbd) - Make aria-labelledby optional on useRichTextEditor
+
 ## 1.8.2
 
 ### Patch Changes
