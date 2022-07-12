@@ -29,7 +29,9 @@ export function useRichTextEditor(
   /*
    * Pass in HTML attributes into the parent RTE node
    */
-  attributes: { "aria-labelledby": string; [name: string]: string },
+  attributes?: {
+    [name: string]: string
+  },
   options?: Options
 ): UseRichTextEditorReturnValue {
   options = {
