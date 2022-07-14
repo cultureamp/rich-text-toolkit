@@ -1,5 +1,5 @@
 import { Schema } from "prosemirror-model"
-import { createDocNode, createEditorState } from "../state.js"
+import { createDocNode, createEditorState } from "../state"
 
 export const testSchema = new Schema({
   nodes: {

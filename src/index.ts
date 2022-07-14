@@ -1,3 +1,4 @@
-export * from "./core/index.js"
-export * from "./schema/index.js"
-export * from "./commands/index.js"
+export * from "./core"
+export * from "./schema"
+export * from "./commands"
+export * from "./plugins"

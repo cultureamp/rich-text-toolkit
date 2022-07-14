@@ -1,17 +1,18 @@
 {
-  "extends": "@tsconfig/node16/tsconfig.json",
+  "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
     "jsx": "react",
     "declaration": true,
     "declarationMap": true,
-    "lib": ["dom", "es2021"],
-    "module": "es2020",
+    "lib": ["dom", "es2020"],
     "moduleResolution": "node",
     "outDir": "dist",
     "rootDir": "src",
     "sourceMap": true,
-    "types": []
+    "types": [],
+    "allowSyntheticDefaultImports": true
   },
+  "files": ["./types.d.ts"],
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
 }

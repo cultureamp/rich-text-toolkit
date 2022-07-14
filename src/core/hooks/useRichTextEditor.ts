@@ -1,6 +1,6 @@
-import { CommandOrTransaction } from "../types.js"
+import { CommandOrTransaction } from "../types"
 import { EditorState } from "prosemirror-state"
-import { createRichTextEditor } from "../create.js"
+import { createRichTextEditor } from "../create"
 import { useCallback, useEffect, useRef, useState } from "react"
 
 type Options = {
@@ -29,7 +29,9 @@ export function useRichTextEditor(
   /*
    * Pass in HTML attributes into the parent RTE node
    */
-  attributes: { "aria-labelledby": string; [name: string]: string },
+  attributes?: {
+    [name: string]: string
+  },
   options?: Options
 ): UseRichTextEditorReturnValue {
   options = {
