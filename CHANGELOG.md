@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.9.0
+
+### Minor Changes
+
+- [#41](https://github.com/cultureamp/rich-text-toolkit/pull/41) [`7927133`](https://github.com/cultureamp/rich-text-toolkit/commit/7927133d1dc39c9ece1b4708b4f96bf1ee6c3716) - feat: add additional validation for link manager and prevent empty a tag render
+
 ## 1.8.3
 
 ### Patch Changes
