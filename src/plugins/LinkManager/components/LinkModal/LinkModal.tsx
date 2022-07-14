@@ -1,5 +1,6 @@
 import { InputEditModal } from "@kaizen/draft-modal"
 import { TextField } from "@kaizen/draft-form"
+import { ValidationResponse, validateLink } from "../../validation"
 import React, { useRef, useState } from "react"
 
 interface LinkModalProps {
@@ -13,13 +14,16 @@ interface LinkModalProps {
 export const LinkModal: React.VFC<LinkModalProps> = props => {
   const { onSubmit, onDismiss, onAfterLeave, isOpen, defaultHref } = props
   const [href, setHref] = useState<string>(defaultHref || "")
-  const [validationError, setValidationError] = useState<boolean>(false)
+  const [validationStatus, setValidationStatus] = useState<ValidationResponse>({
+    status: "default",
+  })
   const inputRef = useRef<HTMLInputElement>(null)
 
   const handleSubmit = (): void => {
-    if (href.trim().length < 1) {
+    const validation = validateLink(href)
+    if (validation.status !== "success") {
       inputRef.current?.focus()
-      setValidationError(true)
+      setValidationStatus(validation)
       return
     }
 
@@ -42,8 +46,8 @@ export const LinkModal: React.VFC<LinkModalProps> = props => {
         defaultValue={href ?? ""}
         labelText="Link URL"
         inputRef={inputRef}
-        validationMessage={validationError ? "Please enter a URL" : undefined}
-        status={validationError ? "error" : undefined}
+        validationMessage={validationStatus.message}
+        status={validationStatus.status}
         onChange={(e: React.ChangeEvent<HTMLInputElement>) => {
           setHref(e.target.value)
         }}
