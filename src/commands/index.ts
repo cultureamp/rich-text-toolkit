@@ -1,6 +1,7 @@
 export * from "./addMark"
 export * from "./getMarkAttrs"
 export * from "./getMarkRange"
+export * from "./listIsActive"
 export * from "./markContainsSelection"
 export * from "./markIsActive"
 export * from "./removeMark"
