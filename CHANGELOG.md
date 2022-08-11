@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.10.0
+
+### Minor Changes
+
+- [#47](https://github.com/cultureamp/rich-text-toolkit/pull/47) [`3ec199d`](https://github.com/cultureamp/rich-text-toolkit/commit/3ec199d566edf5dd0887914ac7f011d2827ada4d) - Add listIsActive method
+
 ## 1.9.0
 
 ### Minor Changes
