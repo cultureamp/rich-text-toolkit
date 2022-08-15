@@ -4,7 +4,9 @@ A collection of helpers for building a rich text editor (WYSIWYG) with [ProseMir
 
 If you only need basic rich text editing functions (bold, italics, lists, links)—take a look at the [Kaizen Rich Text Editor](https://github.com/cultureamp/kaizen-design-system/tree/master/packages/rich-text-editor), which uses these helpers to create a plug-and-play component.
 
-## Contributing
+## Contributions
+
+While the Toolkit was initially built out by Kaizen, contributions are welcome and encouraged from all teams. If there is new functionality that you would like add or extend upon, please reach out to the Design System Team to set up some time before kicking off this new body of work.
 
 ### Triggering a new release
 
@@ -26,11 +28,27 @@ git push origin
 
 This is due to a quirk with the PR that is automatically generated. At the moment it cannot trigger the CI tasks to run. In order to run these, push an empty commit to the PR before merging.
 
+
+## Local development
+
+As there is currently no storybook attached to the Rich Text Toolkit, for ease of local development we would recommend either of the following: 
+- run `yarn build` and copy your `/dist` folder into your local `@kaizen/rich-text-editor` package - this is only really helpful to spot check your current change
+- Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link) or [yacl](https://github.com/wclr/yalc) to create a dependency on your local development environment with the `@kaizen/rich-text-editor`
+  - **Caveat:** there has been some issue getting `yarn link` to work from machine to machine so we recommend using `yacl`
+
+## Using the rich-text-toolkit
+
+The Toolkit was built out with the intention to be used in `@kaizen/rich-text-editor`, which handles the UI and logic around interactive states. While it is recommended that you leverage the Kaizen component, you can utilize the Toolkit to build out a custom solution if modelled similarly.
+
+If you have spoken to the Design System Team and need a bespoke solution, we advise contributing to the Toolkit to build the core functionality and importing that into your project.
+
+
 ## Architecture
 
 ### Diagram
 
 ![RTE Diagram](/docs/assets/rich-text-toolkit-at-a-glance.png)
+*Note: this diagram was created in the planning stage and while it mostly represent the overall structure, there may be some inconsistencies as development continues.*
 
 ### Core
 
@@ -60,13 +78,3 @@ Contains the schema for both nodes and marks. As ProseMirror is opinionated in h
 - [Nodes](https://prosemirror.net/docs/ref/#model.Node) - An element in the DOM tree
 - [Marks](https://prosemirror.net/docs/ref/#model.Mark) - A piece of information that can be attached to a node
 
-## Building a custom Rich Text Editor
-
-While it is heavily recommended that you leverage the Kaizen Rich Text Editor, you can utilize the Toolkit to build out a custom solution.
-
-In this instance, is suggested that you build upon the toolkit and export new commands, plugins or helpers from this repository and then model you implementation on the @kaizen/rich-text-editor
-## Local development
-
-As there is currently no storybook attached to the Rich Text Toolkit, developing locally will require either: 
-- Using `yarn link` to connect your development in the rich-text-toolkit package with @kaizen/rich-text-editor - **Caveat:** there has been some issue getting this to work from machine to machine
-- Build and replace the `/dist` folder over to your local `@kaizen/rich-text-editor` package (don't run yarn install) - this is only really helpful to spot check your current change
