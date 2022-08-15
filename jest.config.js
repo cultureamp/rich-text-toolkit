@@ -6,7 +6,7 @@ module.exports = {
   resolver: "jest-ts-webcompat-resolver",
   testEnvironment: "jsdom",
   testMatch: ["**/*.spec.ts"],
-
+  collectCoverageFrom: ["src/**/*.{ts,tsx}", "!src/**/*.spec.*"],
   globals: {
     "ts-jest": {
       isolatedModules: true,
