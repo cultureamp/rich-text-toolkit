@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.11.0
+
+### Minor Changes
+
+- [#50](https://github.com/cultureamp/rich-text-toolkit/pull/50) [`cd61019`](https://github.com/cultureamp/rich-text-toolkit/commit/cd610195c24f8f2f1659ca562d942e6090441247) - Fix listIsActive helper for nested lists
+
 ## 1.10.0
 
 ### Minor Changes
