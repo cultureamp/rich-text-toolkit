@@ -1,23 +1,12 @@
-import { marks } from "prosemirror-schema-basic"
+// import { marks } from "prosemirror-schema-basic"
 import { createDocNode, createEditorState } from "../../core/state"
 import { Schema } from "prosemirror-model"
+import { marks } from "../../schema/marks"
+import { nodes } from "../../schema/nodes"
 
 export const testSchema = new Schema({
   nodes: {
-    doc: {
-      content: "block+",
-    },
-    paragraph: {
-      content: "inline*",
-      group: "block",
-      parseDOM: [{ tag: "p" }],
-      toDOM() {
-        return ["p", 0]
-      },
-    },
-    text: {
-      group: "inline",
-    },
+    ...nodes,
   },
   marks: {
     ...marks,
@@ -44,6 +33,36 @@ export const testDocNodeContentWithMarksJSON = [
         type: "text",
         marks: [{ type: "strong" }],
         text: "Example Mark",
+      },
+    ],
+  },
+  {
+    type: "paragraph",
+    content: [
+      {
+        type: "text",
+        marks: [{ type: "em" }],
+        text: "Example Italic Mark",
+      },
+    ],
+  },
+  {
+    type: "paragraph",
+    content: [
+      {
+        type: "text",
+        marks: [
+          {
+            type: "link",
+            attrs: {
+              href: "https://cultureamp.design",
+              _metadata: null,
+              target: "_blank",
+              rel: "noreferrer",
+            },
+          },
+        ],
+        text: "Example Link Mark",
       },
     ],
   },

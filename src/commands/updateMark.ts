@@ -25,6 +25,7 @@ export const updateMark: CommandFactory =
     }
 
     const hasMark = doc.rangeHasMark(from, to, type)
+
     if (hasMark) {
       tr.removeMark(from, to, type)
     }

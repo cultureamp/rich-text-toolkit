@@ -4,7 +4,12 @@ import {
   TextSelection,
   Selection,
 } from "prosemirror-state"
-import { MarkType, NodeType } from "prosemirror-model"
+import { MarkType, Node, NodeType } from "prosemirror-model"
+import {
+  findChildrenByType,
+  findParentNodeOfTypeClosestToPos,
+} from "prosemirror-utils"
+import { schema } from "prosemirror-schema-basic"
 
 /*
  ** This is used handle the JSDom type error issue you may encounter in testing
@@ -89,21 +94,38 @@ export const simulateSelectionOfCurrentElement =
     return true
   }
 
+const getNodeByText = (state: EditorState, selectedText: string) => {
+  let filteredNodes = findChildrenByType(
+    state.doc,
+    state.schema.nodes.text,
+    true
+  )
+
+  filteredNodes = filteredNodes.filter(textNode => {
+    if (textNode.node.text && textNode.node.text.indexOf(selectedText) > -1) {
+      return textNode
+    }
+    return false
+  })
+
+  return filteredNodes[0]
+}
+
 export const simulateSelectionByText =
   (selectedText: string) =>
   (state: EditorState, dispatch: (tx: Transaction) => void) => {
     let { tr } = state
-    const endPos = selectedText.length + 1
 
-    const startNode = getStartNode(state)
-    const nodeText = startNode.node?.text
-    const startPos = nodeText?.indexOf(selectedText)
+    const startNode = getNodeByText(state, selectedText)
+    const startPos = startNode.pos
+    const endPos = startPos + selectedText.length
 
     if (startPos !== undefined) {
       tr.setSelection(
         new TextSelection(tr.doc.resolve(startPos), tr.doc.resolve(endPos))
       )
     }
+
     dispatch(tr)
     return true
   }
