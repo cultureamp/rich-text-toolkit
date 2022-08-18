@@ -1,14 +1,9 @@
 import { createRichTextEditor } from "../core/create"
 import { describe, expect, it, jest } from "@jest/globals"
-import { findByText, waitFor, getByText } from "@testing-library/dom"
-import { simulateSelectionByText, simulateTextInsert } from "./fixtures/helpers"
-import {
-  testEditorState,
-  testEditorStateWithMarks,
-  testSchema,
-} from "./fixtures/test-state"
+import { waitFor, getByText } from "@testing-library/dom"
+import { simulateSelectionByText } from "./fixtures/helpers"
+import { testEditorStateWithMarks, testSchema } from "./fixtures/test-state"
 import { updateMark } from "./updateMark"
-import { addMark } from "./addMark"
 
 describe("updateMark", () => {
   const onChange = jest.fn()
@@ -33,28 +28,60 @@ describe("updateMark", () => {
     })
   })
 
-  // it("can update attributes of current mark", async () => {
-  //   const node = document.createElement("div")
-  //   const { dispatchTransaction } = createRichTextEditor({
-  //     node,
-  //     onChange,
-  //     attributes,
-  //     initialEditorState: testEditorStateWithMarks,
-  //   })
+  it("can split a Mark with new attributes in the current selection", async () => {
+    const node = document.createElement("div")
+    const { dispatchTransaction } = createRichTextEditor({
+      node,
+      onChange,
+      attributes,
+      initialEditorState: testEditorStateWithMarks,
+    })
 
-  //   dispatchTransaction(simulateSelectionByText("Example Link"))
-  //   dispatchTransaction(
-  //     updateMark(testSchema.marks.link, {
-  //       href: "https://cultureamp.design",
-  //       _metadata: null,
-  //       rel: "noreferrer",
-  //       target: "_self",
-  //     })
-  //   )
-  //   await findByText(node, "safasdas")
-  //   await waitFor(() => {
-  //     const italicExample = getByText(node, "Example Italic Mark")
-  //     expect(italicExample.nodeName).toBe("EM")
-  //   })
-  // })
+    dispatchTransaction(simulateSelectionByText("Example Link"))
+    dispatchTransaction(
+      updateMark(testSchema.marks.link, {
+        href: "https://google.com/",
+        _metadata: null,
+        rel: "noreferrer",
+        target: "_self",
+      })
+    )
+    await waitFor(() => {
+      const linkExample: HTMLAnchorElement = getByText(node, "Example Link")
+      expect(linkExample.href).toEqual("https://google.com/")
+    })
+  })
+
+  it("can use toExtent to select the entire mark and update its attributes", async () => {
+    const node = document.createElement("div")
+    const { dispatchTransaction } = createRichTextEditor({
+      node,
+      onChange,
+      attributes,
+      initialEditorState: testEditorStateWithMarks,
+    })
+
+    // Select only "Link Mark" within the "Example Link Mark" node
+    dispatchTransaction(simulateSelectionByText("Link Mark"))
+    // will apply the update to the whole link Mark
+    dispatchTransaction(
+      updateMark(
+        testSchema.marks.link,
+        {
+          href: "https://google.com/",
+          _metadata: null,
+          rel: "noreferrer",
+          target: "_self",
+        },
+        { toExtent: true }
+      )
+    )
+    await waitFor(() => {
+      const linkExample: HTMLAnchorElement = getByText(
+        node,
+        "Example Link Mark"
+      )
+      expect(linkExample.href).toEqual("https://google.com/")
+    })
+  })
 })

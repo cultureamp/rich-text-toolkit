@@ -3,11 +3,13 @@ import { EditorState, Transaction } from "prosemirror-state"
 import { MarkType } from "prosemirror-model"
 import { getMarkRange } from "./getMarkRange"
 
+/** Remove part or all of the Mark from the current selection */
 export const removeMark: CommandFactory =
   (
     type: MarkType,
     options: {
       range?: MarkRange
+      /** Select of the entire content of the mark  */
       toExtent: boolean
     } = { toExtent: false }
   ) =>

@@ -3,6 +3,7 @@ import { createDocNode, createEditorState } from "../../core/state"
 import { Schema } from "prosemirror-model"
 import { marks } from "../../schema/marks"
 import { nodes } from "../../schema/nodes"
+import { EditorState } from "prosemirror-state"
 
 export const testSchema = new Schema({
   nodes: {
@@ -32,7 +33,7 @@ export const testDocNodeContentWithMarksJSON = [
       {
         type: "text",
         marks: [{ type: "strong" }],
-        text: "Example Mark",
+        text: "Example Strong Mark",
       },
     ],
   },

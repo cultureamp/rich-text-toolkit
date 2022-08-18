@@ -13,7 +13,7 @@ describe("addMark", () => {
   const onChange = jest.fn()
   const attributes = { "aria-labelledby": "label-text-123" }
 
-  it("creates an empty wrapper of the given mark type if no selection is provided", async () => {
+  it("creates an empty wrapper of the given Mark type if no selection is provided", async () => {
     const node = document.createElement("div")
     const { dispatchTransaction } = createRichTextEditor({
       node,
