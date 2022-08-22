@@ -1,6 +1,6 @@
 // import { marks } from "prosemirror-schema-basic"
-import { createDocNode, createEditorState } from "../../core/state"
 import { Schema } from "prosemirror-model"
+import { createDocNode, createEditorState } from "../../core/state"
 import { marks } from "../../schema/marks"
 import { nodes } from "../../schema/nodes"
 

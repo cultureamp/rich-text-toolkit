@@ -1,8 +1,8 @@
 import {
   EditorState,
-  Transaction,
-  TextSelection,
   Selection,
+  TextSelection,
+  Transaction,
 } from "prosemirror-state"
 import { MarkType, Node, NodeType } from "prosemirror-model"
 import {

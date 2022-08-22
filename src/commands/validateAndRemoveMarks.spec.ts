@@ -1,9 +1,9 @@
 import { createRichTextEditor } from "../core/create"
 import { describe, expect, it, jest } from "@jest/globals"
-import { waitFor, findByText } from "@testing-library/dom"
-import { validateAndRemoveMarks } from "./validateAndRemoveMarks"
+import { findByText, waitFor } from "@testing-library/dom"
 import { testEditorStateWithMarks } from "./fixtures/test-state"
 import { testSchema } from "./fixtures/test-state"
+import { validateAndRemoveMarks } from "./validateAndRemoveMarks"
 
 describe("validateAndRemoveMarks", () => {
   const onChange = jest.fn()
