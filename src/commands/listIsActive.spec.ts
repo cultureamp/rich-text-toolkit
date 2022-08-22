@@ -9,6 +9,7 @@ import { testEditorStateWitList, testSchema } from "./fixtures/test-state"
 describe("listIsActive", () => {
   const onChange = jest.fn()
   const attributes = { "aria-labelledby": "label-text-123" }
+  const listNodes = [testSchema.nodes.bulletList, testSchema.nodes.orderedList]
 
   it("will return true if the current selection matches the list Node type provided", async () => {
     const node = document.createElement("div")
@@ -27,7 +28,9 @@ describe("listIsActive", () => {
     })
 
     await waitFor(() => {
-      expect(listIsActive(currentState, testSchema.nodes.bulletList)).toBe(true)
+      expect(
+        listIsActive(currentState, testSchema.nodes.bulletList, listNodes)
+      ).toBe(true)
     })
   })
   it("will return false if the current selection is a different list Node type", async () => {
@@ -47,9 +50,9 @@ describe("listIsActive", () => {
     })
 
     await waitFor(() => {
-      expect(listIsActive(currentState, testSchema.nodes.orderedList)).toBe(
-        false
-      )
+      expect(
+        listIsActive(currentState, testSchema.nodes.orderedList, listNodes)
+      ).toBe(false)
     })
   })
 })
