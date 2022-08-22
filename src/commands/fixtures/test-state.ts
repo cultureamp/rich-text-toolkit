@@ -3,7 +3,6 @@ import { createDocNode, createEditorState } from "../../core/state"
 import { Schema } from "prosemirror-model"
 import { marks } from "../../schema/marks"
 import { nodes } from "../../schema/nodes"
-import { EditorState } from "prosemirror-state"
 
 export const testSchema = new Schema({
   nodes: {
@@ -21,6 +20,33 @@ export const testDocNodeContentJSON = [
       {
         type: "text",
         text: "Example content",
+      },
+    ],
+  },
+]
+
+export const testDocNodeContentWithListsJSON = [
+  {
+    type: "paragraph",
+    content: [
+      {
+        type: "text",
+        marks: [{ type: "strong" }],
+        text: "Example content",
+      },
+    ],
+  },
+  {
+    type: "bulletList",
+    content: [
+      {
+        type: "listItem",
+        content: [
+          {
+            type: "paragraph",
+            content: [{ type: "text", text: "Bullet List Item Node" }],
+          },
+        ],
       },
     ],
   },
@@ -79,6 +105,11 @@ export const testDocNodeWithMarks = {
   content: testDocNodeContentWithMarksJSON,
 }
 
+export const testDocNodeWitLists = {
+  type: "doc",
+  content: testDocNodeContentWithListsJSON,
+}
+
 export const testEditorState = createEditorState(
   testSchema,
   createDocNode(testSchema, testDocNodeJSON)
@@ -86,4 +117,8 @@ export const testEditorState = createEditorState(
 export const testEditorStateWithMarks = createEditorState(
   testSchema,
   createDocNode(testSchema, testDocNodeWithMarks)
+)
+export const testEditorStateWitList = createEditorState(
+  testSchema,
+  createDocNode(testSchema, testDocNodeWitLists)
 )
