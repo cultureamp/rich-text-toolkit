@@ -3,12 +3,10 @@ import { describe, expect, it, jest } from "@jest/globals"
 import { EditorState } from "prosemirror-state"
 import { waitFor } from "@testing-library/dom"
 import { simulateSelectionByText } from "./fixtures/helpers"
-
 import { testEditorStateWithMarks, testSchema } from "./fixtures/test-state"
 import { getMarkAttrs } from "./getMarkAttrs"
 
 describe("getMarkAttrs", () => {
-  jest.mock("../plugins/LinkManager/LinkManager") // this happens automatically with automocking
   const onChange = jest.fn()
   const attributes = { "aria-labelledby": "label-text-123" }
 

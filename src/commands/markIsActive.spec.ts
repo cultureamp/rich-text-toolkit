@@ -1,10 +1,10 @@
 import { createRichTextEditor } from "../core/create"
 import { describe, expect, it, jest } from "@jest/globals"
-import { waitFor, getByText } from "@testing-library/dom"
+import { waitFor } from "@testing-library/dom"
 import { EditorState } from "prosemirror-state"
+import { markIsActive } from "./markIsActive"
 import { simulateSelectionByText } from "./fixtures/helpers"
 import { testEditorStateWithMarks, testSchema } from "./fixtures/test-state"
-import { markIsActive } from "./markIsActive"
 
 describe("markIsActive", () => {
   const onChange = jest.fn()
