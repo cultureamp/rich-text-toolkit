@@ -6,7 +6,7 @@ If you only need basic rich text editing functions (bold, italics, lists, links)
 
 ## Contributions
 
-While the Toolkit was initially built out by Kaizen, contributions are welcome and encouraged from all teams. If there is new functionality that you would like add or extend upon, please reach out to the Design System Team to set up some time before kicking off this new body of work.
+While the Toolkit was initially built out by the Kaizen Team, contributions are welcome and encouraged from all teams. If there is new functionality that you would like add or extend upon, please reach out to the Kaizen Team to set up some time before kicking off this new body of work.
 
 ### Triggering a new release
 
@@ -33,14 +33,13 @@ This is due to a quirk with the PR that is automatically generated. At the momen
 
 As there is currently no storybook attached to the Rich Text Toolkit, for ease of local development we would recommend either of the following: 
 - run `yarn build` and copy your `/dist` folder into your local `@kaizen/rich-text-editor` package - this is only really helpful to spot check your current change
-- Use [yarn link](https://classic.yarnpkg.com/en/docs/cli/link) or [yacl](https://github.com/wclr/yalc) to create a dependency on your local development environment with the `@kaizen/rich-text-editor`
-  - **Caveat:** there has been some issue getting `yarn link` to work from machine to machine so we recommend using `yacl`
+- [yalc](https://github.com/wclr/yalc) to create a dependency on your local development environment with the `@kaizen/rich-text-editor`
 
 ## Using the rich-text-toolkit
 
 The Toolkit was built out with the intention to be used in `@kaizen/rich-text-editor`, which handles the UI and logic around interactive states. While it is recommended that you leverage the Kaizen component, you can utilize the Toolkit to build out a custom solution if modelled similarly.
 
-If you have spoken to the Design System Team and need a bespoke solution, we advise contributing to the Toolkit to build the core functionality and importing that into your project.
+If you have spoken to the Design System Team and need a bespoke solution, we advise reviewing the Kaizen Rich Text Editor source code to see how the Toolkit has been implemented. Where possible, extend the functionality of the Toolkit before building out separate logic in your implementation.
 
 
 ## Architecture
@@ -53,14 +52,10 @@ If you have spoken to the Design System Team and need a bespoke solution, we adv
 ### Core
 
 Contains the essential functionality to build out the RTE, Including:
-- Initializing the editor view (`/create.ts`)
-    - `createRichTextEditor` creates a new instance of the RTE that can dispatch commands and transactions.
-- Initializing the editor state (`/state.ts`)
-    - `createEditorState` is an API friendly wrapper for ProseMirror's EditorState.create
-    -   `createDocNodeFromContent` creates a Prosemirror doc node by combinining the schema and documents content array
-- React Hook to initialize editor (`/hooks/useRichTextEditor.ts`)
+- React Hook to initialize Rich Text Editor (`/hooks/useRichTextEditor.ts`)
     - The `useRichTextEditor` hook creates an instance of the RTE, binds it to the DOM and allows it to update its state within the React lifecycle
-
+- Helpers to create the editor view (`/create.ts`)
+    - `createRichTextEditor` creates a new instance of the RTE that can dispatch commands and transactions.
 
 ### Commands
 
