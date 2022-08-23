@@ -1,5 +1,23 @@
 # @cultureamp/rich-text-toolkit
 
+## 1.11.0
+
+### Minor Changes
+
+- [#50](https://github.com/cultureamp/rich-text-toolkit/pull/50) [`cd61019`](https://github.com/cultureamp/rich-text-toolkit/commit/cd610195c24f8f2f1659ca562d942e6090441247) - Fix listIsActive helper for nested lists
+
+## 1.10.0
+
+### Minor Changes
+
+- [#47](https://github.com/cultureamp/rich-text-toolkit/pull/47) [`3ec199d`](https://github.com/cultureamp/rich-text-toolkit/commit/3ec199d566edf5dd0887914ac7f011d2827ada4d) - Add listIsActive method
+
+## 1.9.0
+
+### Minor Changes
+
+- [#41](https://github.com/cultureamp/rich-text-toolkit/pull/41) [`7927133`](https://github.com/cultureamp/rich-text-toolkit/commit/7927133d1dc39c9ece1b4708b4f96bf1ee6c3716) - feat: add additional validation for link manager and prevent empty a tag render
+
 ## 1.8.3
 
 ### Patch Changes
