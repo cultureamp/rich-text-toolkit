@@ -13,11 +13,12 @@ export const removeMark: CommandFactory =
       toExtent: boolean
     } = { toExtent: false }
   ) =>
-  (state: EditorState, dispatch: (tx: Transaction) => void) => {
+  (state: EditorState, dispatch?: (tx: Transaction) => void) => {
     const { tr, selection, doc } = state
     let { from, to } = selection
     const { $from } = selection
 
+    if (!dispatch) return false
     if (selection.empty) {
       dispatch(tr.removeStoredMark(type))
     } else {

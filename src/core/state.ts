@@ -9,7 +9,7 @@ import { Node, Schema } from "prosemirror-model"
  */
 export function createEditorState(
   schema: Schema,
-  doc: Node | null,
+  doc: Node | undefined,
   plugins: Array<Plugin> = []
 ): EditorState {
   return EditorState.create({

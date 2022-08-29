@@ -14,9 +14,13 @@ function Scenario({
   onChange?: (editorState: EditorState) => void
   editable?: boolean
 }) {
-  const command = (state: EditorState, dispatch: (tx: Transaction) => void) => {
+  const command = (
+    state: EditorState,
+    dispatch?: (tx: Transaction) => void
+  ) => {
     // Insert text at the current selection point, which is the start because
     // we don’t have a selection yet.
+    if (!dispatch) return false
     dispatch(state.tr.insertText("Prepended content. "))
     return true
   }

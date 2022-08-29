@@ -8,9 +8,9 @@ import {
   updateMark,
   validateAndRemoveMarks,
 } from "../../"
-import { CAEditorView, Dispatcher } from "./types.d"
+import { CAEditorView } from "./types.d"
+import { Command, EditorState, Plugin } from "prosemirror-state"
 import { ComponentType } from "react"
-import { EditorState, Plugin } from "prosemirror-state"
 import {
   LinkEditor,
   LinkEditorAttrs,
@@ -24,7 +24,7 @@ import debounce from "lodash.debounce"
 class LinkManager {
   editorComponent: ComponentType<LinkEditorProps>
   linkActive: (state: EditorState) => boolean
-  validateLinks: (state: EditorState, dispatch: Dispatcher) => boolean
+  validateLinks: Command
   markType: MarkType
   tooltipTarget: {
     destroy: () => void

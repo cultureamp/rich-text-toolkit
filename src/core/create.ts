@@ -50,7 +50,7 @@ export function createRichTextEditor({
     if (commandOrTransaction instanceof Transaction) {
       dispatch(commandOrTransaction)
     } else if (editorView) {
-      commandOrTransaction(editorView.state, dispatch)
+      return commandOrTransaction(editorView.state, dispatch)
     }
   }
 
