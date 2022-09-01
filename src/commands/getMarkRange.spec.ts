@@ -30,13 +30,15 @@ describe("getMarkRange", () => {
       const startPos = currentState.selection.$from
       const providedMark = currentState.schema.marks.em
       const range = getMarkRange(startPos, providedMark)
+      const expectedRangeStart = 22
+      const expectedRangeEnd = 41
       expect(range).toBeTruthy()
-      expect(range).toHaveProperty("from")
-      expect(range).toHaveProperty("to")
+      expect(range?.from).toEqual(expectedRangeStart)
+      expect(range?.to).toEqual(expectedRangeEnd)
     })
   })
 
-  it("returns null if the Mark provided does not match to the current selection", async () => {
+  it("returns null if the Mark is not found from the given position", async () => {
     const node = document.createElement("div")
     const { dispatchTransaction } = createRichTextEditor({
       node,
