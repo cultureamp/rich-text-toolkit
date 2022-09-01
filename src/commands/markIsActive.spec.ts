@@ -3,8 +3,8 @@ import { createRichTextEditor } from "../core/create"
 import { describe, expect, it, jest } from "@jest/globals"
 import { markIsActive } from "./markIsActive"
 import {
-  simulateSelectionByText,
   simulateRangeSelection,
+  simulateSelectionByText,
 } from "./fixtures/helpers"
 import { testEditorStateWithMarks, testSchema } from "./fixtures/test-state"
 import { waitFor } from "@testing-library/dom"
