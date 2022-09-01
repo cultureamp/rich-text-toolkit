@@ -4,6 +4,8 @@ import { createDocNode, createEditorState } from "../../core/state"
 import { marks } from "../../schema/marks"
 import { nodes } from "../../schema/nodes"
 
+const data = require("./data.json")
+
 export const testSchema = new Schema({
   nodes: {
     ...nodes,
@@ -13,112 +15,30 @@ export const testSchema = new Schema({
   },
 })
 
-export const testDocNodeContentJSON = [
-  {
-    type: "paragraph",
-    content: [
-      {
-        type: "text",
-        text: "Example content",
-      },
-    ],
-  },
-]
-
-export const testDocNodeContentWithListsJSON = [
-  {
-    type: "paragraph",
-    content: [
-      {
-        type: "text",
-        marks: [{ type: "strong" }],
-        text: "Example content",
-      },
-    ],
-  },
-  {
-    type: "bulletList",
-    content: [
-      {
-        type: "listItem",
-        content: [
-          {
-            type: "paragraph",
-            content: [{ type: "text", text: "Bullet List Item Node" }],
-          },
-        ],
-      },
-    ],
-  },
-]
-
-export const testDocNodeContentWithMarksJSON = [
-  {
-    type: "paragraph",
-    content: [
-      {
-        type: "text",
-        marks: [{ type: "strong" }],
-        text: "Example Strong Mark",
-      },
-    ],
-  },
-  {
-    type: "paragraph",
-    content: [
-      {
-        type: "text",
-        marks: [{ type: "em" }],
-        text: "Example Italic Mark",
-      },
-    ],
-  },
-  {
-    type: "paragraph",
-    content: [
-      {
-        type: "text",
-        marks: [
-          {
-            type: "link",
-            attrs: {
-              href: "https://cultureamp.design",
-              _metadata: null,
-              target: "_blank",
-              rel: "noreferrer",
-            },
-          },
-        ],
-        text: "Example Link Mark",
-      },
-    ],
-  },
-]
-
-export const testDocNodeJSON = {
+export const testDocNodeBasic = {
   type: "doc",
-  content: testDocNodeContentJSON,
+  content: data.testDocNodeContentJSON,
 }
 
-export const testDocNodeWithMarks = {
+export const testDocNodeMarks = {
   type: "doc",
-  content: testDocNodeContentWithMarksJSON,
+  content: data.testDocNodeContentWithMarksJSON,
 }
 
-export const testDocNodeWitLists = {
+export const testDocNodeLists = {
   type: "doc",
-  content: testDocNodeContentWithListsJSON,
+  content: data.testDocNodeContentWithListsJSON,
 }
 
 export const testEditorState = createEditorState(
   testSchema,
-  createDocNode(testSchema, testDocNodeJSON)
+  createDocNode(testSchema, testDocNodeBasic)
 )
 export const testEditorStateWithMarks = createEditorState(
   testSchema,
-  createDocNode(testSchema, testDocNodeWithMarks)
+  createDocNode(testSchema, testDocNodeMarks)
 )
 export const testEditorStateWitList = createEditorState(
   testSchema,
-  createDocNode(testSchema, testDocNodeWitLists)
+  createDocNode(testSchema, testDocNodeLists)
 )
