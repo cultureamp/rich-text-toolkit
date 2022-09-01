@@ -9,7 +9,7 @@ export const updateMark: CommandFactory =
     type: MarkType,
     attrs: Object,
     options: {
-      /** Select of the entire content of the mark  */
+      /** Apply the update to the entire mark even if the selection only partially contains the mark  */
       toExtent: boolean
     } = { toExtent: false }
   ) =>

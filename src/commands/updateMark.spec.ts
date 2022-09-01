@@ -1,6 +1,6 @@
 import { createRichTextEditor } from "../core/create"
 import { describe, expect, it, jest } from "@jest/globals"
-import { getByText, waitFor } from "@testing-library/dom"
+import { getByRole, getByText, waitFor } from "@testing-library/dom"
 import { simulateSelectionByText } from "./fixtures/helpers"
 import { testEditorStateWithMarks, testSchema } from "./fixtures/test-state"
 import { updateMark } from "./updateMark"
@@ -48,11 +48,17 @@ describe("updateMark", () => {
     )
     await waitFor(() => {
       const linkExample: HTMLAnchorElement = getByText(node, "Example Link")
+      const remainderMark: HTMLAnchorElement = getByRole(node, "link", {
+        name: "Mark",
+      })
+      // checks original mark still has the same value
+      expect(remainderMark.href).toEqual("https://cultureamp.design/")
+      // checks new mark still has the updated value
       expect(linkExample.href).toEqual("https://google.com/")
     })
   })
 
-  it("can use toExtent to select the entire mark and update its attributes", async () => {
+  it("can use toExtent to update the entire mark with only a partial selection and update its attributes", async () => {
     const node = document.createElement("div")
     const { dispatchTransaction } = createRichTextEditor({
       node,
