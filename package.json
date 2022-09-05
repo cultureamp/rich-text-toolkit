@@ -32,6 +32,7 @@
     "lint:eslint": "eslint . --ext .ts,.tsx",
     "lint:prettier": "prettier 'src/**/*' --loglevel=warn",
     "test": "jest",
+    "test:coverage": "jest --coverage",
     "ci:version": "changeset version",
     "ci:release": "yarn build && changeset publish"
   },

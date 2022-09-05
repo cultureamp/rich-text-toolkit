@@ -3,11 +3,13 @@ import { EditorState, Transaction } from "prosemirror-state"
 import { MarkType } from "prosemirror-model"
 import { getMarkRange } from "./getMarkRange"
 
+/** Update Mark attributes, create nested Marks or split Marks of the same type   */
 export const updateMark: CommandFactory =
   (
     type: MarkType,
     attrs: Object,
     options: {
+      /** Apply the update to the entire mark even if the selection only partially contains the mark  */
       toExtent: boolean
     } = { toExtent: false }
   ) =>
@@ -25,6 +27,7 @@ export const updateMark: CommandFactory =
     }
 
     const hasMark = doc.rangeHasMark(from, to, type)
+
     if (hasMark) {
       tr.removeMark(from, to, type)
     }

@@ -3,6 +3,7 @@ import { MarkType } from "prosemirror-model"
 import { getMarkRange } from "./getMarkRange"
 import { markIsActive } from "./markIsActive"
 
+/** Check the current PM Selection against the Mark Type provided */
 export function markContainsSelection(
   state: EditorState,
   markType: MarkType
