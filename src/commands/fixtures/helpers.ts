@@ -4,12 +4,7 @@ import {
   TextSelection,
   Transaction,
 } from "prosemirror-state"
-import { MarkType, Node, NodeType } from "prosemirror-model"
-import {
-  findChildrenByType,
-  findParentNodeOfTypeClosestToPos,
-} from "prosemirror-utils"
-import { schema } from "prosemirror-schema-basic"
+import { findChildrenByType } from "prosemirror-utils"
 
 /*
  ** This is used handle the JSDom type error issue you may encounter in testing
@@ -50,7 +45,7 @@ export const mockRangeForBoundingRect = (document.createRange = () => {
  */
 export const simulateRangeSelection =
   (anchorPositionStart: number = 0, anchorPositionEnd: number = 2) =>
-  (state: EditorState, dispatch: (tx: Transaction) => void) => {
+  (state: EditorState, dispatch?: (tx: Transaction) => void) => {
     let { tr } = state
 
     tr.setSelection(
@@ -59,7 +54,9 @@ export const simulateRangeSelection =
         tr.doc.resolve(anchorPositionEnd)
       )
     )
-    dispatch(tr)
+    if (dispatch) {
+      dispatch(tr)
+    }
     return true
   }
 
@@ -90,7 +87,9 @@ export const simulateSelectionOfCurrentElement =
         tr.doc.resolve(endPos)
       )
     )
-    dispatch(tr)
+    if (dispatch) {
+      dispatch(tr)
+    }
     return true
   }
 
@@ -113,7 +112,7 @@ const getNodeByText = (state: EditorState, selectedText: string) => {
 
 export const simulateSelectionByText =
   (selectedText: string) =>
-  (state: EditorState, dispatch: (tx: Transaction) => void) => {
+  (state: EditorState, dispatch?: (tx: Transaction) => void) => {
     let { tr } = state
 
     const startNode = getNodeByText(state, selectedText)
@@ -126,13 +125,17 @@ export const simulateSelectionByText =
       )
     }
 
-    dispatch(tr)
+    if (dispatch) {
+      dispatch(tr)
+    }
     return true
   }
 
 export const simulateTextInsert =
   (text: string) =>
-  (state: EditorState, dispatch: (tx: Transaction) => void) => {
-    dispatch(state.tr.insertText(text))
+  (state: EditorState, dispatch?: (tx: Transaction) => void) => {
+    if (dispatch) {
+      dispatch(state.tr.insertText(text))
+    }
     return true
   }
