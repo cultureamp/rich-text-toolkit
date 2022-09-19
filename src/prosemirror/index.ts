@@ -1,0 +1,7 @@
+export * as pmCommands from "prosemirror-commands"
+export * as pmKeymap from "prosemirror-keymap"
+export * as pmHistory from "prosemirror-history"
+export * as pmState from "prosemirror-state"
+export * as pmModel from "prosemirror-model"
+export * as pmInputrules from "prosemirror-inputrules"
+export * as pmSchemaList from "prosemirror-schema-list"
