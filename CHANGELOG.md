@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 2.0.0
+
+### Major Changes
+
+- [#53](https://github.com/cultureamp/rich-text-toolkit/pull/53) [`78fe70f`](https://github.com/cultureamp/rich-text-toolkit/commit/78fe70f9480e00ee04e331c62b55ab8ed4657362) - Update prosemirror dependencies and type declarations. Adds prosemirror packages as named exports from the toolkit
+
 ## 1.11.0
 
 ### Minor Changes
