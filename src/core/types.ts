@@ -1,4 +1,4 @@
-import { EditorState, Transaction } from "prosemirror-state"
+import { Command, Transaction } from "prosemirror-state"
 import { EditorView as ProseMirrorEditorView } from "prosemirror-view"
 
 /**
@@ -6,12 +6,6 @@ import { EditorView as ProseMirrorEditorView } from "prosemirror-view"
  * EditorState in order
  */
 export type Dispatch = (tx: Transaction) => void
-
-export type Command = (
-  editorState: EditorState,
-  dispatch: Dispatch,
-  view?: EditorView
-) => boolean
 
 /**
  * Curry a Command

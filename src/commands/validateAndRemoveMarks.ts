@@ -1,5 +1,5 @@
 import { EditorState, Transaction } from "prosemirror-state"
-import { Mark, MarkType, Schema } from "prosemirror-model"
+import { Mark, MarkType } from "prosemirror-model"
 import { RemoveMarkStep } from "prosemirror-transform"
 
 type KnownAttrs = {
@@ -20,13 +20,15 @@ export function validateAndRemoveMarks(
   markType: MarkType,
   validator: AttrsValidator
 ) {
-  return (state: EditorState, dispatch: (tx: Transaction) => void) => {
+  return (state: EditorState, dispatch?: (tx: Transaction) => void) => {
+    if (!dispatch) return false
+
     const from = 0
     const to = state.doc.content.size
     const { tr } = state
 
     const matched: Array<{
-      style: Mark<Schema<string, string>>
+      style: Mark
       from: number
       to: number
       step: number

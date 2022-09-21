@@ -62,6 +62,7 @@ export function useRichTextEditor(
       editableStatusRef.current = status
       // Trigger an update within ProseMirror by issuing a noop transaction
       dispatchTransaction((state, dispatch) => {
+        if (!dispatch) return false
         dispatch(state.tr)
         return true
       })

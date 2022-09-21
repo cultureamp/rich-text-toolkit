@@ -1,4 +1,4 @@
-import { EditorState, Transaction } from "prosemirror-state"
+import { Command, EditorState, Transaction } from "prosemirror-state"
 import { createRichTextEditor } from "./create"
 import { describe, expect, it, jest } from "@jest/globals"
 import { findByText, queryByText } from "@testing-library/dom"
@@ -61,10 +61,11 @@ describe("createRichTextEditor", () => {
 
     const command = (
       state: EditorState,
-      dispatch: (tx: Transaction) => void
+      dispatch?: (tx: Transaction) => void
     ) => {
       // Insert text at the current selection point, which is the start because
       // we don’t have a selection yet.
+      if (!dispatch) return false
       dispatch(state.tr.insertText("Prepended content. "))
       return true
     }
@@ -88,8 +89,9 @@ describe("createRichTextEditor", () => {
     const onChange = jest.fn()
     const command = (
       state: EditorState,
-      dispatch: (tx: Transaction) => void
+      dispatch?: (tx: Transaction) => void
     ) => {
+      if (!dispatch) return false
       dispatch(state.tr.insertText("Prepended content. "))
       return true
     }
@@ -113,8 +115,9 @@ describe("createRichTextEditor", () => {
     const onChange = jest.fn()
     const command = (
       state: EditorState,
-      dispatch: (tx: Transaction) => void
+      dispatch?: (tx: Transaction) => void
     ) => {
+      if (!dispatch) return false
       dispatch(state.tr.insertText("Prepended content. "))
       return true
     }
@@ -168,8 +171,9 @@ describe("createRichTextEditor", () => {
     const onChange = jest.fn()
     const noopCommand = (
       state: EditorState,
-      dispatch: (tx: Transaction) => void
+      dispatch?: (tx: Transaction) => void
     ) => {
+      if (!dispatch) return false
       dispatch(state.tr)
       return true
     }
@@ -196,8 +200,9 @@ describe("createRichTextEditor", () => {
     const onChange = jest.fn()
     const noopCommand = (
       state: EditorState,
-      dispatch: (tx: Transaction) => void
+      dispatch?: (tx: Transaction) => void
     ) => {
+      if (!dispatch) return false
       dispatch(state.tr)
       return true
     }

@@ -13,7 +13,9 @@ export const updateMark: CommandFactory =
       toExtent: boolean
     } = { toExtent: false }
   ) =>
-  (state: EditorState, dispatch: (tx: Transaction) => void) => {
+  (state: EditorState, dispatch?: (tx: Transaction) => void) => {
+    if (!dispatch) return false
+
     const { tr, selection, doc } = state
     let { from, to } = selection
     const { $from, empty } = selection
