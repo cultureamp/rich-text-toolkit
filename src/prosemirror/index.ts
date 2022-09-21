@@ -1,4 +1,3 @@
-// export all ProseMirror packages that used in the @kaizen/rich-text-editor
 export * as ProseMirrorCommands from "prosemirror-commands"
 export * as ProseMirrorKeymap from "prosemirror-keymap"
 export * as ProseMirrorHistory from "prosemirror-history"
