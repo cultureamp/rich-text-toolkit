@@ -1,4 +1,10 @@
-# Rich Text Toolkit
+# Rich Text Toolkit (Deprecated)
+
+Package has been moved to: https://github.com/cultureamp/kaizen-design-system/packages/rich-text-toolkit
+
+Migration: change `@cultureamp/rich-text-toolkit` to `@kaizen/rich-text-toolkit` 
+
+---
 
 A collection of helpers for building a rich text editor (WYSIWYG) with [ProseMirror](https://prosemirror.net/).
 
