@@ -2,7 +2,7 @@
 
 Package has been moved to: https://github.com/cultureamp/kaizen-design-system/packages/rich-text-toolkit
 
-Migration: change `@cultureamp/rich-text-toolkit` to `@kaizen/rich-text-toolkit` 
+Migration: change `@cultureamp/rich-text-toolkit` to `@kaizen/rich-text-editor/toolkit` 
 
 ---
 
