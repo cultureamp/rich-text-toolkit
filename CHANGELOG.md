@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 2.0.1
+
+### Patch Changes
+
+- [#56](https://github.com/cultureamp/rich-text-toolkit/pull/56) [`8986dd2`](https://github.com/cultureamp/rich-text-toolkit/commit/8986dd2cd0f3aca271568138019b0073b75aabca) - Update kaizen component library deps
+
 ## 2.0.0
 
 ### Major Changes
