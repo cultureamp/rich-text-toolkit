@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 2.0.2
+
+### Patch Changes
+
+- [#58](https://github.com/cultureamp/rich-text-toolkit/pull/58) [`2341368`](https://github.com/cultureamp/rich-text-toolkit/commit/234136839e61e96e5401fdfdbb7e458ac1a3804e) - Update @kaizen dependencies
+
 ## 2.0.1
 
 ### Patch Changes
