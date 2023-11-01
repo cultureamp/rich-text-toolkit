@@ -46,6 +46,7 @@
     "@types/node": "^17.0.21",
     "@typescript-eslint/eslint-plugin": "^5.13.0",
     "@typescript-eslint/parser": "^5.13.0",
+    "agadoo": "^3.0.0",
     "copyfiles": "^2.4.1",
     "eslint": "^8.10.0",
     "eslint-import-resolver-typescript": "^2.5.0",
