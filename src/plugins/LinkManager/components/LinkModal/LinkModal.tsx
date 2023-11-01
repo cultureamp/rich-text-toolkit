@@ -1,5 +1,4 @@
-import { InputEditModal } from "@kaizen/draft-modal"
-import { TextField } from "@kaizen/draft-form"
+import { InputEditModal, TextField } from "@kaizen/components"
 import { ValidationResponse, validateLink } from "../../validation"
 import React, { useRef, useState } from "react"
 
