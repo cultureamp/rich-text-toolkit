@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 2.0.3
+
+### Patch Changes
+
+- [#60](https://github.com/cultureamp/rich-text-toolkit/pull/60) [`ae54c90`](https://github.com/cultureamp/rich-text-toolkit/commit/ae54c90a87eb40a29c6dcdd4c9704b18e66cf3da) - Update to use module in scss file extension
+
 ## 2.0.2
 
 ### Patch Changes
