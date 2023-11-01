@@ -27,8 +27,10 @@
   },
   "scripts": {
     "copy-styles": "copyfiles -u 1 src/**/*.scss",
-    "build:cjs": "tsc -b ./tsconfig.cjs.json && yarn copy-styles dist/cjs",
-    "build:esm": "tsc -b ./tsconfig.esm.json && yarn copy-styles dist/esm",
+    "rename-js-ext:cjs": "renamer -f '.js' -r '.cjs' './dist/cjs/**/*.*(js|js.map)'",
+    "build:cjs": "tsc -b ./tsconfig.cjs.json && yarn rename-js-ext:cjs && yarn copy-styles dist/cjs",
+    "rename-js-ext:esm": "renamer -f '.js' -r '.mjs' './dist/esm/**/*.*(js|js.map)'",
+    "build:esm": "tsc -b ./tsconfig.esm.json && yarn rename-js-ext:esm && yarn copy-styles dist/esm",
     "build:types": "tsc -b ./tsconfig.types.json",
     "clean": "rm -rf dist",
     "build": "yarn clean && yarn build:esm && yarn build:cjs && yarn build:types",
