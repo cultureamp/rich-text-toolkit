@@ -17,7 +17,6 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
-      - name: Create canary release and publish to npm
       - run: |
           npm config set "//npm.pkg.github.com/:_authToken" "$GITHUB_TOKEN"
       - run: |
