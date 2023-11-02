@@ -15,7 +15,7 @@ jobs:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       LABEL: ${{ github.event.inputs.label }}
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v3
       - uses: ./.github/actions/setup
       - run: |
           npm config set "//npm.pkg.github.com/:_authToken" "$GITHUB_TOKEN"
