@@ -27,7 +27,7 @@ runs:
     - name: yarn install
       shell: bash
       env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        GITHUB_TOKEN: ${{ github.token }}
       run: |
         npm config set "//npm.pkg.github.com/:_authToken" "$GITHUB_TOKEN"
         yarn install --frozen-lockfile
