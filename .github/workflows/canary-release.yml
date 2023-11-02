@@ -13,22 +13,19 @@ jobs:
     runs-on: ubuntu-latest
     env:
       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-      NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
       LABEL: ${{ github.event.inputs.label }}
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v2
       - uses: ./.github/actions/setup
-      - name: Set npm token
-        run: |
-          npm config set "//registry.npmjs.org/:_authToken" "$NPM_TOKEN"
       - name: Create canary release and publish to npm
-        id: changesets
-        run: |
+      - run: |
+          npm config set "//npm.pkg.github.com/:_authToken" "$GITHUB_TOKEN"
+      - run: |
+          git config --global user.email "cultureamp-ci@cultureamp.com"
+          git config --global user.name "cultureamp-ci"
+      - run: |
           echo "🥚 Building canary-$LABEL"
           yarn build
           echo "🐣 Releasing canary-$LABEL"
           yarn changeset version --snapshot "canary-$LABEL"
           yarn changeset publish --tag "canary-$LABEL"
-      - name: Push tags
-        run: |
-          git push --follow-tags
