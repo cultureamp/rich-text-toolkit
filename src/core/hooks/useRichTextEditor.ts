@@ -24,6 +24,9 @@ type UseRichTextEditorReturnValue = [
  * @param {initialEditorState} ProseMirror state
  * @returns {Array}
  */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export function useRichTextEditor(
   initialEditorState: EditorState,
   /*

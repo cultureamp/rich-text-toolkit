@@ -20,7 +20,9 @@ import { MarkType } from "prosemirror-model"
 import { SelectionPosition } from "./types.d"
 import { createReactTooltipWrapper } from "./createReactTooltipWrapper"
 import debounce from "lodash.debounce"
-
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 class LinkManager {
   editorComponent: ComponentType<LinkEditorProps>
   linkActive: (state: EditorState) => boolean

@@ -16,6 +16,9 @@ export type AttrsValidator = (
 // This is a variation on the removeMark transform in
 // https://github.com/ProseMirror/prosemirror-transform/blob/master/src/mark.js#L44
 /** This will walk the full doc and remove the Marks that fail the validator method */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export function validateAndRemoveMarks(
   markType: MarkType,
   validator: AttrsValidator

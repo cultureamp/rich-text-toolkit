@@ -13,6 +13,9 @@ const proseNodesWithCamelCase = {
   codeBlock: proseNodes.code_block,
 }
 
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export const nodes: NodeSpec = {
   ...proseNodesWithCamelCase,
   orderedList: {

@@ -2,6 +2,9 @@ import { EditorState } from "prosemirror-state"
 import { NodeType } from "prosemirror-model"
 import { findParentNodeOfTypeClosestToPos } from "prosemirror-utils"
 
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export function listIsActive(
   state: EditorState,
   type: NodeType,

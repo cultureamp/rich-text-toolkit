@@ -16,6 +16,9 @@ export type LinkEditorProps = {
   focusEditor: () => void
 }
 
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export function LinkEditor({
   attrs,
   removeMark,

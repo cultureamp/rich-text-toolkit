@@ -4,6 +4,9 @@ import { MarkType } from "prosemirror-model"
 import { getMarkRange } from "./getMarkRange"
 
 /** Update Mark attributes, create nested Marks or split Marks of the same type   */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export const updateMark: CommandFactory =
   (
     type: MarkType,

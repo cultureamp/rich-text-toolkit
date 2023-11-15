@@ -4,6 +4,9 @@ import { MarkType } from "prosemirror-model"
 import { getMarkRange } from "./getMarkRange"
 
 /** Remove part or all of the Mark from the current selection */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export const removeMark: CommandFactory =
   (
     type: MarkType,

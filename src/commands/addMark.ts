@@ -3,6 +3,9 @@ import { EditorState, Transaction } from "prosemirror-state"
 import { MarkType } from "prosemirror-model"
 
 /** Wrap the users current selection in the given Mark type   */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export const addMark: CommandFactory =
   (type: MarkType, attrs?: Record<string, unknown>) =>
   (state: EditorState, dispatch?: (tx: Transaction) => void) => {
