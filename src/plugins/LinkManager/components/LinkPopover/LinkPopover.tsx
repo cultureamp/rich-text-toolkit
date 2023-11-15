@@ -8,7 +8,7 @@ import React from "react"
 import editIcon from "@kaizen/component-library/icons/edit.icon.svg"
 import externalLinkIcon from "@kaizen/component-library/icons/external-link.icon.svg"
 import removeLinkIcon from "@kaizen/component-library/icons/remove-link.icon.svg"
-import styles from "./LinkPopover.scss"
+import styles from "./LinkPopover.module.scss"
 
 export interface LinkPopoverProps {
   href?: string

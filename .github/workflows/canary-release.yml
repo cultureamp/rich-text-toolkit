@@ -1,0 +1,30 @@
+name: "Canary release"
+
+on:
+  workflow_dispatch:
+    inputs:
+      label:
+        description: 'Pick a label for the release, to be included in the version number — e.g. "fix-button-focus" will released as "@kaizen/button@0.0.0-canary-fix-button-focus-20230719002814"'
+        required: true
+        type: string
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    env:
+      GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      LABEL: ${{ github.event.inputs.label }}
+    steps:
+      - uses: actions/checkout@v2
+      - uses: ./.github/actions/setup
+      - run: |
+          npm config set "//npm.pkg.github.com/:_authToken" "$GITHUB_TOKEN"
+      - run: |
+          git config --global user.email "cultureamp-ci@cultureamp.com"
+          git config --global user.name "cultureamp-ci"
+      - run: |
+          echo "🥚 Building canary-$LABEL"
+          yarn build
+          echo "🐣 Releasing canary-$LABEL"
+          yarn changeset version --snapshot "canary-$LABEL"
+          yarn changeset publish --tag "canary-$LABEL"
