@@ -1,5 +1,11 @@
 # @cultureamp/rich-text-toolkit
 
+## 2.0.4
+
+### Patch Changes
+
+- [#65](https://github.com/cultureamp/rich-text-toolkit/pull/65) [`201af5a`](https://github.com/cultureamp/rich-text-toolkit/commit/201af5adbace6b30c294ab9a70bb7db62aacb289) - deprecated
+
 ## 2.0.3
 
 ### Patch Changes
