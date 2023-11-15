@@ -1,3 +1,9 @@
+# Deprecated
+
+All functionality has been migrated to https://github.com/cultureamp/kaizen-design-system
+
+---
+
 # Rich Text Toolkit
 
 A collection of helpers for building a rich text editor (WYSIWYG) with [ProseMirror](https://prosemirror.net/).
