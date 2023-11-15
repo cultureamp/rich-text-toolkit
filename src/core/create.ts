@@ -24,6 +24,9 @@ type EditorArgs = {
  * createRichTextEditor
  * Initialize a ProseMirror EditorView
  */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export function createRichTextEditor({
   initialEditorState,
   node,

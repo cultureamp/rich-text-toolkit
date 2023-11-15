@@ -4,6 +4,9 @@ import { getMarkRange } from "./getMarkRange"
 import { markIsActive } from "./markIsActive"
 
 /** Check the current PM Selection against the Mark Type provided */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export function markContainsSelection(
   state: EditorState,
   markType: MarkType

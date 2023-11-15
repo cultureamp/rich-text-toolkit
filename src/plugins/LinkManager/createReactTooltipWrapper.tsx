@@ -33,6 +33,9 @@ function Wrapper({
  * Create a wrapping connector for rendering a React element into a separate
  * part of the DOM while being able to update it without remounting.
  */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export function createReactTooltipWrapper(
   parentNode: HTMLElement,
   Component: ElementType,

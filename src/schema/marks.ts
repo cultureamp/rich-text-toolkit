@@ -2,6 +2,9 @@ import { MarkSpec, Node } from "prosemirror-model"
 import { marks as proseMarks } from "prosemirror-schema-basic"
 import { validateLink } from "../plugins/LinkManager/validation"
 
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export const marks: MarkSpec = {
   ...proseMarks,
 

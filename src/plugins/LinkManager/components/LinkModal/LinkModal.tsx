@@ -11,6 +11,9 @@ interface LinkModalProps {
   defaultHref?: string
 }
 
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export const LinkModal: React.VFC<LinkModalProps> = props => {
   const { onSubmit, onDismiss, onAfterLeave, isOpen, defaultHref } = props
   const [href, setHref] = useState<string>(defaultHref || "")

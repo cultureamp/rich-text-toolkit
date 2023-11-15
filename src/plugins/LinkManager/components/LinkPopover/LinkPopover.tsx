@@ -17,6 +17,9 @@ export interface LinkPopoverProps {
   selectionPosition: SelectionPosition
 }
 
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export const LinkPopover: React.VFC<LinkPopoverProps> = props => {
   const { href, onRemove, onEdit, selectionPosition } = props
   const [ElementRef, Popover] = usePopover()

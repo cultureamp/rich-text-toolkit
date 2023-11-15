@@ -7,6 +7,9 @@ import { Node, Schema } from "prosemirror-model"
  * Create a ProseMirror EditorState. Wrapper for EditorState.create to make the
  * API obvious to consumers
  */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export function createEditorState(
   schema: Schema,
   doc: Node | undefined,
@@ -23,6 +26,9 @@ export function createEditorState(
  * Create a ProseMirror doc node from the combination of a schema and the object
  * representation of a document
  */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
+ */
 export function createDocNode(schema: Schema, docObject: Doc) {
   return Node.fromJSON(schema, docObject)
 }
@@ -30,6 +36,9 @@ export function createDocNode(schema: Schema, docObject: Doc) {
 /**
  * Create a ProseMirror doc node from the combination of a schema and the doc’s
  * content array (rather than the top-level doc node).
+ */
+/**
+ * @deprecated Please use the same component from `@kaizen/components`
  */
 export function createDocNodeFromContent(
   schema: Schema,
