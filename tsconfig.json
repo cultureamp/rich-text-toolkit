@@ -1,18 +1,21 @@
 {
-  "extends": "@tsconfig/node14/tsconfig.json",
   "compilerOptions": {
+    "baseUrl": ".",
+    "lib": ["es2020", "dom"],
+    "module": "commonjs",
     "jsx": "react",
-    "declaration": true,
-    "declarationMap": true,
-    "lib": ["dom", "es2020"],
-    "moduleResolution": "node",
-    "outDir": "dist",
-    "rootDir": "src",
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "allowJs": false,
+    "resolveJsonModule": true,
     "sourceMap": true,
     "types": [],
-    "allowSyntheticDefaultImports": true
+    "allowSyntheticDefaultImports": true,
+    "strict": true,
+    "noImplicitAny": true,
+    "rootDir": "src",
   },
-  "files": ["./types.d.ts"],
+  "files": ["types.d.ts"],
   "include": ["src/**/*"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
 }

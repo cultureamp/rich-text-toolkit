@@ -12,7 +12,6 @@ runs:
       with:
         node-version-file: .nvmrc
         cache: "yarn"
-        registry-url: https://npm.pkg.github.com/
 
     # yarn install with use of cache
     # this is bit duplicate to cache: "yarn" above, but from testing the best performance is when both are used.

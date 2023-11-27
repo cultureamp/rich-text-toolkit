@@ -1,13 +1,13 @@
-import { Box, Icon } from "@kaizen/component-library"
-import { IconButton } from "@kaizen/button"
-import { Paragraph } from "@kaizen/typography"
+import {
+  EditIcon,
+  ExternalLinkIcon,
+  RemoveLinkIcon,
+  Text,
+  usePopover,
+} from "@kaizen/components"
 import { Positioner } from "./Positioner"
 import { SelectionPosition } from "../../types"
-import { usePopover } from "@kaizen/draft-popover"
 import React from "react"
-import editIcon from "@kaizen/component-library/icons/edit.icon.svg"
-import externalLinkIcon from "@kaizen/component-library/icons/external-link.icon.svg"
-import removeLinkIcon from "@kaizen/component-library/icons/remove-link.icon.svg"
 import styles from "./LinkPopover.module.scss"
 
 export interface LinkPopoverProps {
@@ -29,9 +29,9 @@ export const LinkPopover: React.VFC<LinkPopoverProps> = props => {
       <Positioner ref={ElementRef} {...selectionPosition} />
       <Popover size="large">
         <div className={styles.popoverContent}>
-          <Icon icon={externalLinkIcon} role="presentation" />
-          <Box pl={0.5} pr={0.75}>
-            <Paragraph
+          <ExternalLinkIcon role="presentation" />
+          <div className={styles.popoverLinkContainer}>
+            <Text
               variant="body"
               tag="div"
               classNameOverride={styles.paragraphFlex}
@@ -44,15 +44,15 @@ export const LinkPopover: React.VFC<LinkPopoverProps> = props => {
               >
                 {href}
               </a>
-            </Paragraph>
-          </Box>
-          <Box pr={0.25} pl={0.25} classNameOverride={styles.popoverActions}>
-            <IconButton onClick={onEdit} icon={editIcon} label="Edit link" />
-          </Box>
-          <IconButton
+            </Text>
+          </div>
+          <div className={styles.popoverActions}>
+            <EditIcon role="img" onClick={onEdit} aria-label="Edit link" />
+          </div>
+          <RemoveLinkIcon
+            role="img"
             onClick={onRemove}
-            icon={removeLinkIcon}
-            label="Remove link"
+            aria-label="Remove link"
           />
         </div>
       </Popover>
